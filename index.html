@@ -24,19 +24,24 @@
                     </div>
                     <span class="counter-label counter-label-today">Hoje</span>
                     <i class="fas fa-calendar-day counter-icon counter-icon-daily"></i>
-                    <div class="counter-badge counter-badge-daily">
+                    <div class="counter-badge2 counter-badge-daily">
                         <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdivulgacastro.github.io%2Fdaily&label=Hoje&icon=calendar-day&color=%230d6efd"
                              alt="Visualizações hoje"
                              title="Visualizações hoje">
                     </div>
                 </div>
             </div>
-            <nav>
+            <!-- Hamburger Button - Added -->
+            <button id="hamburger-btn" class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Navigation Menu - Added ID -->
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#" class="active">Início</a></li>
                     <li><a href="#anuncie">Anuncie</a></li> <!-- Changed href -->
                     <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -44,9 +49,7 @@
 
     <section class="hero">
         <div class="container">
-            <h2>Divulgue seu negócio em Castro!</h2>
-            <p>Alcance milhares de pessoas interessadas em seus produtos e serviços.</p>
-            <a href="#anuncie" class="btn btn-primary">Anuncie Agora</a>
+            <h2>Encontre promoções exclusivas dos seus negócios <br>favoritos de Castro!</h2>
         </div>
     </section>
 
@@ -70,7 +73,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer id="contato">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -83,7 +86,7 @@
                         <li><a href="#">Início</a></li>
                         <li><a href="#anuncie">Anuncie</a></li>
                         <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#contato">Contato</a></li> <!-- Changed href -->
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -102,6 +105,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay"></div>
+    <div id="modal-container" class="modal-container">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Fechar modal">×</button>
+        <button id="modal-prev-btn" class="modal-nav-btn prev" aria-label="Anúncio anterior">❮</button>
+        <button id="modal-next-btn" class="modal-nav-btn next" aria-label="Próximo anúncio">❯</button>
+        <div id="modal-content" class="modal-content">
+            <!-- Conteúdo do anúncio será injetado aqui -->
+        </div>
+    </div>
+    <!-- Fim Modal Structure -->
 
     <!-- Activate the script -->
     <script src="script.js"></script>

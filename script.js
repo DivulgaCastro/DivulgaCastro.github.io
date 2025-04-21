@@ -3,11 +3,14 @@ const ads = [
     {
         id: 1,
         filled: true,
-        title: "Restaurante Sabor da Terra",
-        description: "O melhor da culinária caseira em Castro. Venha nos visitar!",
-        image: "https://via.placeholder.com/400x300.png?text=Restaurante+Sabor+da+Terra",
-        contactNumber: "5542999991111",
-        addressLink: "https://goo.gl/maps/placeholder1" // Placeholder address link
+        title: "NoBreak",
+        description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
+        image: "./propagandas/NoBreak.jpeg",
+        imageFit: "contain", // Controla object-fit geral
+        mobileModalImageContainerHeight: "150vh", // Exemplo: Definir altura do CONTAINER da imagem no mobile modal
+        mobileModalMaxWidth: "150%",   // Exemplo: Limitar largura da IMAGEM a 95% no mobile modal
+        contactNumber: "5542984023985",
+        addressLink: "https://www.google.com/maps/dir/-24.8102667,-49.9952477/No+break+com%C3%A9rcio+de+baterias,+Tv.+Rio+de+Janeiro,+1713+-+Jd+das+arauc%C3%A1rias+2,+Castro+-+PR,+84174-070/@-24.8101474,-49.9978748,17z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94c29de0f556b0e3:0x8b97800079570872!2m2!1d-49.9952744!2d-24.8100281?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     {
         id: 2,
@@ -15,8 +18,11 @@ const ads = [
         title: "Auto Mecânica Silva",
         description: "Serviços de mecânica em geral com o melhor preço da cidade.",
         image: "https://via.placeholder.com/400x300.png?text=Auto+Mecânica+Silva",
+        imageFit: "contain",
+        // mobileModalImageContainerHeight: "50vh", // Pode adicionar aqui também se quiser
+        // mobileModalMaxWidth: "100%",
         contactNumber: "5542999992222",
-        addressLink: "https://goo.gl/maps/placeholder2" // Placeholder address link
+        addressLink: "https://goo.gl/maps/placeholder2"
     },
     {
         id: 3,
@@ -24,8 +30,9 @@ const ads = [
         title: "Farmácia Popular",
         description: "Medicamentos e produtos de higiene com entrega gratuita.",
         image: "https://via.placeholder.com/400x300.png?text=Farmácia+Popular",
+        imageFit: "contain",
         contactNumber: "5542999993333",
-        addressLink: "https://goo.gl/maps/placeholder3" // Placeholder address link
+        addressLink: "https://goo.gl/maps/placeholder3"
     },
     {
         id: 4,
@@ -33,30 +40,58 @@ const ads = [
         title: "Supermercado Economia",
         description: "Preços baixos todos os dias. Confira nossas ofertas!",
         image: "https://via.placeholder.com/400x300.png?text=Supermercado+Economia",
+        imageFit: "cover",
         contactNumber: "5542999994444",
-        addressLink: "https://goo.gl/maps/placeholder4" // Placeholder address link
+        addressLink: "https://goo.gl/maps/placeholder4"
     },
+    // ... (restantes dos anúncios permanecem iguais)
     {
         id: 5,
         filled: false,
-        contactNumber: "5542999999999" // Contact for empty slot CTA
+        contactNumber: "5542999999999"
     },
     {
         id: 6,
         filled: false,
-        contactNumber: "5542999999999" // Contact for empty slot CTA
+        contactNumber: "5542999999999"
     },
     {
         id: 7,
         filled: false,
-        contactNumber: "5542999999999" // Contact for empty slot CTA
+        contactNumber: "5542999999999"
     },
     {
         id: 8,
         filled: false,
-        contactNumber: "5542999999999" // Contact for empty slot CTA
+        contactNumber: "5542999999999"
+    },
+    {
+        id: 9,
+        filled: false,
+        contactNumber: "5542999999999"
+    },
+    {
+        id: 10,
+        filled: false,
+        contactNumber: "5542999999999"
+    },
+    {
+        id: 11,
+        filled: false,
+        contactNumber: "5542999999999"
+    },
+    {
+        id: 12,
+        filled: false,
+        contactNumber: "5542999999999"
     }
 ];
+
+// --- Variáveis Globais ---
+let currentModalIndex = -1; // Índice do anúncio atual no modal
+let filledAdsForModal = []; // Array apenas com anúncios preenchidos para navegação modal
+
+// --- Funções ---
 
 // Função para embaralhar array (algoritmo Fisher-Yates)
 function shuffleArray(array) {
@@ -75,24 +110,25 @@ function createAdCards() {
         console.error("Element with ID 'ads-container' not found.");
         return;
     }
-    adsContainer.innerHTML = '';
+    adsContainer.innerHTML = ''; // Limpa o container
 
     const filledAds = ads.filter(ad => ad.filled);
     const emptyAds = ads.filter(ad => !ad.filled);
     const shuffledFilledAds = shuffleArray(filledAds);
+
+    filledAdsForModal = [...shuffledFilledAds]; // Guarda os anúncios preenchidos e embaralhados para o modal
     const combinedAds = [...shuffledFilledAds, ...emptyAds];
 
     combinedAds.forEach(ad => {
         const adCard = document.createElement('div');
-        adCard.dataset.id = ad.id;
+        adCard.dataset.id = ad.id; // Adiciona data-id para identificar o card
 
         if (ad.filled) {
             adCard.className = 'ad-card filled';
-
-            // --- ADDED ADDRESS BUTTON ---
+            // Inclui o estilo inline object-fit baseado na propriedade imageFit
             adCard.innerHTML = `
-                <div class="ad-card-image">
-                    <img src="${ad.image}" alt="${ad.title}" loading="lazy">
+                <div class="ad-card-image" role="button" aria-label="Ver detalhes do anúncio ${ad.title}">
+                    <img src="${ad.image}" alt="${ad.title}" loading="lazy" style="object-fit: ${ad.imageFit || 'contain'};">
                 </div>
                 <div class="ad-card-content">
                     <h3 class="ad-card-title">${ad.title}</h3>
@@ -108,6 +144,18 @@ function createAdCards() {
                     </div>
                 </div>
             `;
+             // Adiciona o event listener para abrir o modal ao clicar na IMAGEM
+            const imageContainer = adCard.querySelector('.ad-card-image');
+            if (imageContainer) {
+                imageContainer.addEventListener('click', () => {
+                     // Encontra o índice deste anúncio no array 'filledAdsForModal'
+                    const indexInFilled = filledAdsForModal.findIndex(filledAd => filledAd.id === ad.id);
+                    if (indexInFilled > -1) {
+                        openModal(indexInFilled);
+                    }
+                });
+            }
+
         } else {
             adCard.className = 'ad-card empty';
             adCard.innerHTML = `
@@ -123,10 +171,156 @@ function createAdCards() {
     });
 }
 
+
+// --- Lógica do Menu Hamburger ---
+function setupHamburgerMenu() {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('main-nav');
+    const icon = hamburgerBtn.querySelector('i');
+
+    if (hamburgerBtn && navMenu && icon) {
+        hamburgerBtn.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            hamburgerBtn.setAttribute('aria-expanded', isOpen);
+            if (isOpen) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+            }
+        });
+    } else {
+        console.error("Hamburger button or navigation menu not found.");
+    }
+}
+
+// --- Lógica do Modal ---
+function setupModal() {
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalContainer = document.getElementById('modal-container');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const prevBtn = document.getElementById('modal-prev-btn');
+    const nextBtn = document.getElementById('modal-next-btn');
+
+    if (!modalOverlay || !modalContainer || !modalContent || !closeBtn || !prevBtn || !nextBtn) {
+        console.error("Modal elements not found.");
+        return;
+    }
+
+    // Função para abrir o modal
+    window.openModal = (index) => { // Expor globalmente para ser chamada pelo event listener do card
+        if (index < 0 || index >= filledAdsForModal.length) return;
+
+        currentModalIndex = index;
+        const ad = filledAdsForModal[currentModalIndex];
+
+        // Monta o conteúdo do modal (similar ao card, mas dentro do modal)
+        modalContent.innerHTML = `
+            <div class="ad-card-image modal-image">
+                 <img src="${ad.image}" alt="${ad.title}">
+            </div>
+            <div class="ad-card-content modal-details">
+                <h3 class="ad-card-title">${ad.title}</h3>
+                <p class="ad-card-description">${ad.description}</p>
+                <div class="ad-card-contact">
+                    <a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Contato
+                    </a>
+                    ${ad.addressLink ?
+                    `<a href="${ad.addressLink}" target="_blank" class="btn btn-address">
+                        <i class="fas fa-map-marker-alt"></i> Endereço
+                    </a>` : ''}
+                </div>
+            </div>
+        `;
+
+        // --- START: Set Custom Properties ---
+        const imgContainerElement = modalContent.querySelector('.modal-image');
+        const imgElement = modalContent.querySelector('.modal-image img');
+
+        if (imgContainerElement) {
+             // Set NEW custom property for mobile modal CONTAINER height
+            imgContainerElement.style.setProperty('--mobile-modal-image-container-height', ad.mobileModalImageContainerHeight || '40vh'); // Default fallback
+        }
+
+        if (imgElement) {
+            // Set object-fit for the image
+            imgElement.style.setProperty('--modal-img-object-fit', ad.imageFit || 'contain');
+
+            // Set custom property for mobile modal IMAGE max-width
+            imgElement.style.setProperty('--mobile-modal-max-width', ad.mobileModalMaxWidth || '150%'); // Default fallback
+        }
+        // --- END: Set Custom Properties ---
+
+        // Atualiza visibilidade dos botões de navegação
+        prevBtn.disabled = currentModalIndex === 0;
+        nextBtn.disabled = currentModalIndex === filledAdsForModal.length - 1;
+
+        // Exibe o modal
+        modalOverlay.classList.add('active');
+        modalContainer.classList.add('active');
+        document.body.classList.add('modal-open'); // Impede scroll do fundo
+    };
+
+    // Função para fechar o modal
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        modalContainer.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        currentModalIndex = -1; // Reseta o índice
+    };
+
+    // Função para mostrar anúncio anterior
+    const showPrevAd = () => {
+        if (currentModalIndex > 0) {
+            openModal(currentModalIndex - 1);
+        }
+    };
+
+    // Função para mostrar próximo anúncio
+    const showNextAd = () => {
+        if (currentModalIndex < filledAdsForModal.length - 1) {
+            openModal(currentModalIndex + 1);
+        }
+    };
+
+    // Event listeners do modal
+    closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal); // Fechar ao clicar fora
+    prevBtn.addEventListener('click', showPrevAd);
+    nextBtn.addEventListener('click', showNextAd);
+
+     // Previne que clique dentro do modal feche o modal
+    modalContainer.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    // Navegação pelo teclado
+    document.addEventListener('keydown', (event) => {
+        if (modalContainer.classList.contains('active')) { // Só funciona se modal estiver ativo
+            if (event.key === 'Escape') {
+                closeModal();
+            } else if (event.key === 'ArrowLeft') {
+                showPrevAd();
+            } else if (event.key === 'ArrowRight') {
+                showNextAd();
+            }
+        }
+    });
+}
+
+
 // Função para inicializar a página
 function initPage() {
-    createAdCards();
+    createAdCards(); // Cria os cards primeiro
+    setupHamburgerMenu(); // Inicializa o menu hamburger
+    setupModal(); // Inicializa a lógica do modal
     console.log("Contador de visualização carregado via imagem de badge no HTML.");
+    // Os listeners para abrir o modal são adicionados dentro de createAdCards agora
 }
 
 document.addEventListener('DOMContentLoaded', initPage);

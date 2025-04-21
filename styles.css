@@ -21,11 +21,18 @@ body {
     line-height: 1.6;
     color: var(--dark-color);
     background-color: #f5f5f5;
+    position: relative; /* Needed for modal overlay locking */
 }
+
+/* Classe para impedir scroll quando o modal está aberto */
+body.modal-open {
+    overflow: hidden;
+}
+
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -61,6 +68,8 @@ img {
     border: 1px solid transparent; /* Add base border for smooth transition */
     font-size: 15px;
     line-height: 1.5; /* Ensure consistent line height */
+    position: relative; /* Adicionado para garantir que z-index funcione se necessário */
+    z-index: 1; /* Garante que botões fiquem acima de elementos irmãos simples */
 }
 .btn i {
     margin-right: 6px; /* Space between icon and text */
@@ -90,7 +99,6 @@ img {
     color: white;
 }
 
-/* --- NEW ADDRESS BUTTON STYLE --- */
 .btn-address {
     background-color: var(--gray-color);
     color: white;
@@ -110,7 +118,7 @@ header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Header acima do conteúdo normal */
 }
 
 header .container {
@@ -119,6 +127,7 @@ header .container {
     align-items: center;
     flex-wrap: wrap;
     padding: 15px 20px;
+    position: relative; /* Needed for absolute positioning of mobile nav */
 }
 
 .logo-container {
@@ -159,7 +168,7 @@ header .container {
 
 .counter-badge {
     position: relative;
-    width: 30px;
+    width: 35px;
     height: 28px;
     overflow: hidden;
     border-radius: 4px;
@@ -176,7 +185,33 @@ header .container {
 .counter-badge img {
     position: absolute;
     top: 0;
-    right: -3px; /* Fine-tune this */
+    right: -4.5px; /* Fine-tune this */
+    height: 100%;
+    width: auto;
+    max-width: none;
+    display: block;
+}
+
+.counter-badge2 {
+    position: relative;
+    width: 33px;
+    height: 28px;
+    overflow: hidden;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.2);
+    vertical-align: middle;
+    background-color: #fff;
+    order: 6; /* Corrigido para ordem correta */
+}
+
+.counter-badge2 img {
+    position: absolute;
+    top: 0;
+    right: -50px; /* Fine-tune this */
     height: 100%;
     width: auto;
     max-width: none;
@@ -186,11 +221,13 @@ header .container {
 .counter-badge-total {
     background-color: var(--primary-color);
     border-color: #146c43;
+     order: 3; /* Confirmando ordem */
 }
 
 .counter-badge-daily {
     background-color: var(--secondary-color);
     border-color: #0a58ca;
+    order: 6; /* Confirmando ordem */
 }
 
 
@@ -198,6 +235,7 @@ header .container {
 nav ul {
     display: flex;
     gap: 20px;
+    transition: max-height 0.3s ease-out; /* Added for mobile animation */
 }
 
 nav ul li a {
@@ -205,12 +243,30 @@ nav ul li a {
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 5px;
+    display: block; /* Ensure links take full width in mobile */
 }
 
 nav ul li a:hover, nav ul li a.active {
     color: var(--primary-color);
     background-color: var(--light-gray);
 }
+
+/* Hamburger Button Styles */
+.hamburger-button {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark-color);
+    padding: 5px;
+    line-height: 1;
+}
+
+.hamburger-button:hover {
+    color: var(--primary-color);
+}
+
 
 /* Hero Section */
 .hero {
@@ -233,7 +289,8 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Ads Section */
 .ads-section {
-    padding: 60px 0;
+    padding-bottom: 60px;
+    padding-top: 30px;
 }
 
 .ads-section h2 {
@@ -254,10 +311,9 @@ nav ul li a:hover, nav ul li a.active {
     background-color: var(--primary-color);
 }
 
-/* --- WIDER GRID COLUMNS --- */
 .ads-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increased min width */
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Increased min width */
     gap: 30px;
 }
 
@@ -269,6 +325,7 @@ nav ul li a:hover, nav ul li a.active {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative; /* Garante contexto de empilhamento para filhos com z-index */
 }
 
 .ad-card:hover {
@@ -277,53 +334,71 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .ad-card-image {
-    height: 300px; /* Keep image height */
+    height: 400px; /* Keep image height */
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     flex-shrink: 0;
+    position: relative; /* Para posicionar a imagem corretamente com object-fit */
+    z-index: 0; /* Garante que a imagem fique abaixo do conteúdo se houver sobreposição */
 }
 
 .ad-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit é controlado inline via JS */
     position: static !important;
     right: auto !important;
     max-width: 100% !important;
 }
 
+/* Adiciona cursor pointer para indicar que a imagem é clicável */
+.ad-card.filled .ad-card-image {
+    cursor: pointer;
+}
+
+
 .ad-card-content {
-    padding: 15px;
+    padding: 25px; /* Aumentado padding */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    position: relative; /* Necessário para z-index funcionar */
+    z-index: 1; /* Coloca a área de conteúdo acima da imagem no contexto do card */
 }
 
 .ad-card-title {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 20px; /* Aumentado */
+    margin-bottom: 10px; /* Ajustado */
     color: var(--dark-color);
 }
 
 .ad-card-description {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Aumentado */
     color: var(--gray-color);
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 14px; /* Aumentado */
+    line-height: 1.6; /* Ajustado */
     flex-grow: 1;
 }
 
-/* --- BUTTON CONTAINER STYLING --- */
 .ad-card-contact {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Add gap between buttons */
+    gap: 15px; /* Aumentado gap */
     margin-top: auto; /* Push to bottom */
     flex-wrap: wrap; /* Allow buttons to wrap on narrow cards */
+    position: relative; /* Para z-index funcionar */
+    z-index: 2; /* Garante que a área de contato (e botões dentro) fique acima do resto do conteúdo */
 }
+
+/* Garante que os botões sejam clicáveis - Adicionado !important como último recurso */
+.ad-card-contact .btn {
+    pointer-events: auto !important;
+    z-index: 3; /* Z-index mais alto para garantir que esteja acima de tudo no card */
+}
+
 
 /* Empty Ad Cards Specific Styles */
 .ad-card.empty {
@@ -380,6 +455,8 @@ nav ul li a:hover, nav ul li a.active {
     color: var(--primary-color);
     font-size: 18px;
     padding: 12px 24px;
+    z-index: 1; /* Reset z-index para botões fora dos cards */
+    pointer-events: auto !important; /* Reset pointer-events */
 }
 
 .cta-section .btn:hover {
@@ -392,7 +469,6 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 /* Footer */
-/* Footer styles remain the same */
 footer {
     background-color: var(--dark-color);
     color: white;
@@ -494,75 +570,308 @@ footer {
     opacity: 0.7;
 }
 
+/* --- Estilos do Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo mais escuro */
+    z-index: 1050; /* Abaixo do modal container, acima do resto */
+    display: none; /* Escondido por padrão */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9); /* Efeito de escala inicial */
+    width: 90%;
+    max-width: 900px; /* Largura máxima do modal */
+    max-height: 90vh; /* Altura máxima relativa à tela */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1060; /* Acima do overlay */
+    display: none; /* Escondido por padrão */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Para conter os elementos internos */
+    flex-direction: column; /* Empilhar verticalmente por padrão */
+}
+
+.modal-container.active {
+    display: flex; /* Mudar para flex ao ativar */
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Animação de escala ao abrir */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row; /* Lado a lado em telas maiores */
+    flex-grow: 1;
+    overflow-y: auto; /* Scroll se necessário */
+    height: 100%; /* Ocupa o espaço disponível */
+    /* Ajustes para evitar problemas com botões de navegação */
+    padding-left: 70px;
+    padding-right: 50px;
+    padding-top: 40px; /* Espaço para botão fechar */
+    padding-bottom: 20px;
+}
+
+
+/* Ajustes no conteúdo DENTRO do modal */
+.modal-container .ad-card-image.modal-image {
+    height: auto; /* Altura automática baseada no conteúdo */
+    max-height: calc(100% - 40px); /* Limita altura da imagem (considerando padding/botões) */
+    width: 50%; /* Metade da largura no layout lado a lado */
+    background-color: #eee; /* Fundo claro para a área da imagem */
+    flex-shrink: 0;
+    padding: 10px; /* Espaçamento interno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Para conter a imagem */
+    overflow: hidden; /* Esconde overflow da imagem se necessário */
+}
+
+.modal-container .ad-card-image.modal-image img {
+    /* width: 100%; */ /* REMOVIDO - Deixa max-width controlar */
+    height: 100%; /* Ocupa a altura do container */
+    max-height: 100%; /* Garante que a imagem caiba na div */
+    /* object-fit é definido via JS com var(--modal-img-object-fit) */
+    object-fit: var(--modal-img-object-fit, contain);
+    display: block; /* Garante que não haja espaço extra */
+    position: static !important; /* Resetar estilos */
+    /* max-width é definido via JS com var(--mobile-modal-max-width) em mobile, ou 100% aqui */
+    max-width: 100% !important;
+}
+
+
+.modal-container .ad-card-content.modal-details {
+    padding: 30px; /* Mais padding */
+    width: 50%; /* Metade da largura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    overflow-y: auto; /* Scroll se o texto for muito longo */
+}
+
+.modal-container .ad-card-title {
+    font-size: 24px; /* Maior no modal */
+    color: var(--primary-color);
+}
+
+.modal-container .ad-card-description {
+    font-size: 15px; /* Pouco maior */
+    margin-bottom: 25px;
+}
+
+.modal-container .ad-card-contact {
+    margin-top: 20px; /* Espaço antes dos botões */
+    justify-content: flex-start; /* Alinha botões à esquerda no modal */
+    z-index: 1; /* Abaixo dos botões de navegação do modal */
+}
+/* Garante que botões DENTRO do modal sejam clicáveis */
+.modal-container .ad-card-contact .btn {
+    pointer-events: auto !important;
+    z-index: 2; /* Acima da area de contato do modal */
+}
+
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 35px;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    z-index: 1070; /* Acima de tudo no modal */
+    transition: color 0.3s ease;
+}
+.modal-close-btn:hover {
+    color: var(--dark-color);
+}
+
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1070; /* Acima de tudo no modal */
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    line-height: 1;
+}
+.modal-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-nav-btn.prev {
+    left: 15px;
+}
+.modal-nav-btn.next {
+    right: 15px;
+}
+.modal-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none; /* Desativa eventos no botão desabilitado */
+}
+
+
+/* --- Fim Estilos do Modal --- */
+
 
 /* Responsividade */
-@media (max-width: 992px) { /* Adjust breakpoint for wider cards */
+@media (max-width: 992px) {
      .ads-grid {
-        /* Allow 2 columns for longer */
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
+
+    /* Ajustes modal para telas médias */
+    .modal-container {
+        max-width: 700px;
+    }
+    .modal-content {
+       flex-direction: column; /* Empilha imagem e texto */
+       height: auto; /* Altura automática */
+       max-height: calc(90vh - 60px); /* Limita altura total e permite scroll */
+       padding-left: 20px; /* Menos padding lateral */
+       padding-right: 20px;
+       padding-top: 50px; /* Espaço para fechar */
+       padding-bottom: 20px;
+    }
+     .modal-container .ad-card-image.modal-image {
+        width: 100%; /* Largura total */
+        max-height: 45vh; /* Limita altura da imagem */
+        height: auto; /* Reset height */
+        padding: 10px; /* Reduz padding */
+        margin-bottom: 15px; /* Espaço entre imagem e texto */
+    }
+     .modal-container .ad-card-image.modal-image img {
+         height: 100%; /* Fill container */
+         max-width: 100% !important; /* Reset max-width */
+     }
+
+    .modal-container .ad-card-content.modal-details {
+         width: 100%; /* Largura total */
+         padding: 15px; /* Reduz padding */
+         justify-content: flex-start; /* Alinha topo */
+         flex-grow: 1; /* Permite crescer */
+         overflow-y: visible; /* Remove scroll interno, deixa o scroll do modal-content */
+    }
+
+    .modal-container .ad-card-title { font-size: 20px; }
+    .modal-container .ad-card-description { font-size: 14px; margin-bottom: 15px; }
+    .modal-container .ad-card-contact { justify-content: center; } /* Centraliza botões */
 }
 
 
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .logo-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
+        text-align: left;
         gap: 10px;
+        order: 1;
+        flex-basis: calc(100% - 50px);
+        flex-wrap: wrap;
     }
+
+     .logo-container h1 {
+        margin-bottom: 0;
+     }
 
     .counter-container {
-       justify-content: center;
+       justify-content: flex-start;
        width: 100%;
        margin-top: 5px;
-       order: 3;
     }
-     .logo-container h1 { order: 1;}
-     nav { order: 2; width: 100%;}
 
+    .hamburger-button {
+        display: block;
+        order: 2;
+        margin-left: auto;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    nav.open {
+         max-height: 300px;
+    }
 
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-bottom: 10px;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 0;
+        display: flex;
+        width: 100%;
     }
 
-    .hero {
-        padding: 50px 0;
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--light-gray);
+    }
+     nav ul li:last-child {
+        border-bottom: none;
     }
 
-    .hero h2 {
-        font-size: 28px;
+    nav ul li a {
+        padding: 15px 20px;
+        border-radius: 0;
     }
+     nav ul li a:hover, nav ul li a.active {
+        background-color: var(--light-gray);
+    }
+
+    .hero { padding: 50px 0; }
+    .hero h2 { font-size: 28px; }
 
     .ads-grid {
-        /* Use previous rule or adjust further */
-         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Back to 300px min */
+         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
     }
 
-     .ad-card-image {
-        height: 250px; /* Adjust image height */
-    }
-     .ad-card.empty {
-        min-height: 400px; /* Adjust empty height */
-    }
-     .ad-card-content {
-        padding: 15px;
-    }
-     .ad-card-title {
-        font-size: 18px;
-    }
-     .ad-card-description {
-        font-size: 13px;
-    }
-
+     .ad-card-image { height: 250px; }
+     .ad-card-content { padding: 20px; z-index: 1; } /* Garante z-index */
+     .ad-card-contact { z-index: 2; } /* Garante z-index */
+     .ad-card.empty { min-height: 400px; }
 
     .footer-content {
         grid-template-columns: 1fr;
@@ -572,19 +881,38 @@ footer {
         left: 50%;
         transform: translateX(-50%);
     }
-    .footer-contact p {
-        justify-content: center;
+    .footer-contact p { justify-content: center; }
+    .social-media { justify-content: center; }
+
+    /* Modal em telas menores */
+    .modal-container {
+        width: 95%;
+        max-height: 95vh;
     }
-    .social-media {
-        justify-content: center;
+     .modal-content {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 45px; /* Espaço para fechar */
     }
+     .modal-nav-btn { font-size: 24px; padding: 8px 12px; }
+     .modal-nav-btn.prev { left: 5px; } /* Ajustado para não sobrepor conteúdo */
+     .modal-nav-btn.next { right: 5px; }/* Ajustado para não sobrepor conteúdo */
+     .modal-close-btn { font-size: 30px; top: 8px; right: 10px; } /* Ajustado */
+     .modal-container .ad-card-content.modal-details { padding: 15px; }
+
+     /* Image container height reset for medium screens */
+     .modal-container .ad-card-image.modal-image {
+        max-height: 45vh; /* Default max height */
+        height: auto; /* Reset explicit height */
+     }
 }
 
 @media (max-width: 576px) {
 
-    .logo-container h1 {
-        font-size: 24px;
-    }
+    .hero h2 { font-size: 24px; margin-bottom: 10px; }
+    .logo-container { flex-basis: calc(100% - 45px); }
+    .logo-container h1 { font-size: 22px; }
+    .hamburger-button { font-size: 22px; }
 
     .counter-container {
         gap: 5px;
@@ -598,52 +926,72 @@ footer {
      .counter-icon-daily { order: 5;}
      .counter-badge-daily { order: 6;}
 
-
     .counter-label { font-size: 11px; }
     .counter-icon { font-size: 14px; }
-    .counter-badge { width: 30px; height: 24px; }
-
-    .hero h2 {
-        font-size: 24px;
-    }
-    .hero p {
-        font-size: 16px;
-    }
-
-    .ads-grid {
-        grid-template-columns: 1fr; /* Single column */
-    }
-     .ad-card-image {
-        height: 220px;
-    }
-    .ad-card.empty {
-        min-height: 350px;
-    }
-     .ad-card-content {
-        padding: 12px;
-    }
-     .ad-card-title {
-        font-size: 16px;
-    }
-     .ad-card-description {
-        font-size: 12px;
-        margin-bottom: 10px;
-    }
-     .btn {
-        padding: 8px 14px; /* Smaller padding */
-        font-size: 13px; /* Smaller font */
-    }
-     .cta-section .btn {
-        font-size: 16px; /* Smaller CTA button */
-        padding: 10px 20px;
-    }
+    .counter-badge, .counter-badge2 { width: 30px; height: 24px; }
 
 
-    .cta-section h2 {
-        font-size: 24px; /* Smaller CTA heading */
+    .hero p { font-size: 16px; }
+
+    .ads-grid { grid-template-columns: 1fr; }
+    .ad-card-image { height: 220px; }
+    .ad-card.empty { min-height: 350px; }
+    .ad-card-content { padding: 15px; z-index: 1; } /* Garante z-index */
+    .ad-card-title { font-size: 17px; }
+    .ad-card-description { font-size: 13px; margin-bottom: 15px; }
+    .ad-card-contact { z-index: 2; } /* Garante z-index */
+    .btn { padding: 8px 14px; font-size: 13px; }
+    .cta-section .btn { font-size: 16px; padding: 10px 20px; }
+    .cta-section h2 { font-size: 24px; }
+    .cta-section p { font-size: 16px; }
+
+     /* --- Modal em telas muito pequenas --- */
+
+     /* Define a altura do CONTAINER da imagem usando a variável JS */
+    .modal-container .ad-card-image.modal-image {
+         /* REMOVED max-height: 40vh; */
+         height: var(--mobile-modal-image-container-height, 40vh); /* Use variable for container height */
+         margin-bottom: 10px;
+         /* Added Flex properties for centering */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%; /* Ensure container takes full width */
+         overflow: hidden; /* Hide image overflow */
     }
-    .cta-section p {
-        font-size: 16px;
+
+    /* Define estilos da IMAGEM dentro do container */
+    .modal-container .ad-card-image.modal-image img {
+        /* Basic styles */
+        position: static !important; /* Resetar estilos */
+        display: block; /* Prevent extra space */
+        width: auto; /* Allow natural width */
+        height: 100%; /* Fill the container height */
+        /* REMOVED overflow-y: auto; */
+
+        /* Use CSS Variables set by JS */
+        object-fit: var(--modal-img-object-fit, contain); /* Use variable for object-fit */
+        /* REMOVED max-height rule - height is controlled by container */
+        max-width: var(--mobile-modal-max-width, 150%) !important; /* Use variable for max-width */
+    }
+    /* --- END Modal Image Styles --- */
+
+    .modal-container .ad-card-title { font-size: 18px; }
+    .modal-container .ad-card-description { font-size: 13px; }
+    .modal-nav-btn { display: none; } /* Oculta setas em telas muito pequenas */
+    .modal-content { /* Remove padding lateral para aproveitar espaço sem as setas */
+         padding-left: 10px;
+         padding-right: 10px;
+    }
+
+    .counter-badge2 img {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        height: 100%;
+        width: auto;
+        max-width: none;
+        display: block;
     }
 
 }
