@@ -361,7 +361,7 @@ nav ul li a:hover, nav ul li a.active {
 
 
 .ad-card-content {
-    padding: 25px; /* Aumentado padding */
+    padding: 15px; /* Aumentado padding */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -372,6 +372,7 @@ nav ul li a:hover, nav ul li a.active {
 .ad-card-title {
     font-size: 20px; /* Aumentado */
     margin-bottom: 10px; /* Ajustado */
+    text-align: center;
     color: var(--dark-color);
 }
 
@@ -860,6 +861,10 @@ footer {
         background-color: var(--light-gray);
     }
 
+    .container {
+        padding: 5px;
+    }
+
     .hero { padding: 50px 0; }
     .hero h2 { font-size: 28px; }
 
@@ -868,7 +873,7 @@ footer {
         gap: 20px;
     }
 
-     .ad-card-image { height: 250px; }
+     .ad-card-image { height: 600px; }
      .ad-card-content { padding: 20px; z-index: 1; } /* Garante z-index */
      .ad-card-contact { z-index: 2; } /* Garante z-index */
      .ad-card.empty { min-height: 400px; }
@@ -909,9 +914,9 @@ footer {
 
 @media (max-width: 576px) {
 
-    .hero h2 { font-size: 24px; margin-bottom: 10px; }
+    .hero h2 { font-size: 18px; margin-bottom: 10px; }
     .logo-container { flex-basis: calc(100% - 45px); }
-    .logo-container h1 { font-size: 22px; }
+    .logo-container h1 { font-size: 30px; }
     .hamburger-button { font-size: 22px; }
 
     .counter-container {
@@ -926,15 +931,15 @@ footer {
      .counter-icon-daily { order: 5;}
      .counter-badge-daily { order: 6;}
 
-    .counter-label { font-size: 11px; }
+    .counter-label { font-size: 15px; }
     .counter-icon { font-size: 14px; }
-    .counter-badge, .counter-badge2 { width: 30px; height: 24px; }
+    .counter-badge, .counter-badge2 { width: 40px; height: 30px; }
 
 
     .hero p { font-size: 16px; }
 
     .ads-grid { grid-template-columns: 1fr; }
-    .ad-card-image { height: 220px; }
+    .ad-card-image { height: 520px; }
     .ad-card.empty { min-height: 350px; }
     .ad-card-content { padding: 15px; z-index: 1; } /* Garante z-index */
     .ad-card-title { font-size: 17px; }
@@ -950,7 +955,7 @@ footer {
      /* Define a altura do CONTAINER da imagem usando a variável JS */
     .modal-container .ad-card-image.modal-image {
          /* REMOVED max-height: 40vh; */
-         height: var(--mobile-modal-image-container-height, 40vh); /* Use variable for container height */
+         height: var(--mobile-modal-image-container-height, 80vh); /* Use variable for container height */
          margin-bottom: 10px;
          /* Added Flex properties for centering */
          display: flex;
@@ -964,6 +969,7 @@ footer {
     .modal-container .ad-card-image.modal-image img {
         /* Basic styles */
         position: static !important; /* Resetar estilos */
+        object-fit: contain;
         display: block; /* Prevent extra space */
         width: auto; /* Allow natural width */
         height: 100%; /* Fill the container height */

@@ -7,8 +7,8 @@ const ads = [
         description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
         image: "./propagandas/NoBreak.jpeg",
         imageFit: "contain", // Controla object-fit geral
-        mobileModalImageContainerHeight: "150vh", // Definir altura do CONTAINER da imagem no mobile modal
-        mobileModalMaxWidth: "150%",   // Limitar largura da IMAGEM a 95% no mobile modal
+        mobileModalImageContainerHeight: "600px", // Definir altura do CONTAINER da imagem no mobile modal
+        mobileModalMaxWidth: "300%",   // Limitar largura da IMAGEM a 95% no mobile modal
         contactNumber: "5542984023985",
         addressLink: "https://www.google.com/maps/dir/-24.8102667,-49.9952477/No+break+com%C3%A9rcio+de+baterias,+Tv.+Rio+de+Janeiro,+1713+-+Jd+das+arauc%C3%A1rias+2,+Castro+-+PR,+84174-070/@-24.8101474,-49.9978748,17z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94c29de0f556b0e3:0x8b97800079570872!2m2!1d-49.9952744!2d-24.8100281?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
     },
@@ -128,7 +128,6 @@ function createAdCards() {
                 </div>
                 <div class="ad-card-content">
                     <h3 class="ad-card-title">${ad.title}</h3>
-                    <p class="ad-card-description">${ad.description}</p>
                     <div class="ad-card-contact">
                         <a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
                             <i class="fab fa-whatsapp"></i> Contato
