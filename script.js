@@ -7,44 +7,40 @@ const ads = [
         description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
         image: "./propagandas/NoBreak.jpeg",
         imageFit: "contain", // Controla object-fit geral
-        mobileModalImageContainerHeight: "150vh", // Exemplo: Definir altura do CONTAINER da imagem no mobile modal
-        mobileModalMaxWidth: "150%",   // Exemplo: Limitar largura da IMAGEM a 95% no mobile modal
+        mobileModalImageContainerHeight: "150vh", // Definir altura do CONTAINER da imagem no mobile modal
+        mobileModalMaxWidth: "150%",   // Limitar largura da IMAGEM a 95% no mobile modal
         contactNumber: "5542984023985",
         addressLink: "https://www.google.com/maps/dir/-24.8102667,-49.9952477/No+break+com%C3%A9rcio+de+baterias,+Tv.+Rio+de+Janeiro,+1713+-+Jd+das+arauc%C3%A1rias+2,+Castro+-+PR,+84174-070/@-24.8101474,-49.9978748,17z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94c29de0f556b0e3:0x8b97800079570872!2m2!1d-49.9952744!2d-24.8100281?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     {
         id: 2,
         filled: true,
-        title: "Auto Mecânica Silva",
-        description: "Serviços de mecânica em geral com o melhor preço da cidade.",
-        image: "https://via.placeholder.com/400x300.png?text=Auto+Mecânica+Silva",
+        title: "Escape Room PG",
+        description: "Tente escapar de diversas salas temazidas em 60 minutos!",
+        image: "./propagandas/EscapeRoomPG.jpeg",
         imageFit: "contain",
-        // mobileModalImageContainerHeight: "50vh", // Pode adicionar aqui também se quiser
-        // mobileModalMaxWidth: "100%",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
         contactNumber: "5542999992222",
         addressLink: "https://goo.gl/maps/placeholder2"
     },
     {
         id: 3,
         filled: true,
-        title: "Farmácia Popular",
-        description: "Medicamentos e produtos de higiene com entrega gratuita.",
-        image: "https://via.placeholder.com/400x300.png?text=Farmácia+Popular",
+        title: "Restaurante Casantiga",
+        description: "Restaurante buffet e a la carte no centro de Castro",
+        image: "./propagandas/Casantiga.jpeg",
         imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
         contactNumber: "5542999993333",
         addressLink: "https://goo.gl/maps/placeholder3"
     },
     {
         id: 4,
-        filled: true,
-        title: "Supermercado Economia",
-        description: "Preços baixos todos os dias. Confira nossas ofertas!",
-        image: "https://via.placeholder.com/400x300.png?text=Supermercado+Economia",
-        imageFit: "cover",
-        contactNumber: "5542999994444",
-        addressLink: "https://goo.gl/maps/placeholder4"
+        filled: false,
+        contactNumber: "5542999999999"
     },
-    // ... (restantes dos anúncios permanecem iguais)
     {
         id: 5,
         filled: false,

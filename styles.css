@@ -334,7 +334,7 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .ad-card-image {
-    height: 400px; /* Keep image height */
+    height: 600px; /* Keep image height */
     background-color: var(--light-gray);
     display: flex;
     align-items: center;
