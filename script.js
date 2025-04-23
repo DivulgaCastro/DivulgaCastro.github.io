@@ -36,8 +36,8 @@ const ads = [
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
-        contactNumber: "5542999993333",
-        addressLink: "https://goo.gl/maps/placeholder3"
+        contactNumber: "5542999272035",
+        addressLink: "https://www.google.com/maps/dir//R.+Maj.+Otávio+Novaes,+467+-+Centro,+Castro+-+PR,+84165-230"
     },
     {
         id: 4,
