@@ -93,8 +93,16 @@ const ads = [
     },
     {
         id: 8,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "23-04-2025",
+        title: "LF - Pinturas e Reformas",
+        description: "Graffiato, Massa Corrida, Massa Acrílica, Textura e Efeitos",
+        image: "propagandas/LFPinturasReformas.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999705728",
+        addressLink: ""
     },
     {
         id: 9,
