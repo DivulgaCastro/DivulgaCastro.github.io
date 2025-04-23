@@ -3,6 +3,7 @@ const ads = [
     {
         id: 1,
         filled: true,
+        dataUltimoPagamento_insercao: "22-04-2025",
         title: "NoBreak",
         description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
         image: "./propagandas/NoBreak.jpeg",
@@ -15,6 +16,7 @@ const ads = [
     {
         id: 2,
         filled: true,
+        dataUltimoPagamento_insercao: "22-04-2025",
         title: "Escape Room PG",
         description: "Salas temáticas com enigmas e desafios para seu grupo desvendar. Você é capaz de escapar em 60 minutos?",
         image: "./propagandas/EscapeRoomPG.jpeg",
@@ -27,6 +29,7 @@ const ads = [
     {
         id: 3,
         filled: true,
+        dataUltimoPagamento_insercao: "",
         title: "Restaurante Casantiga",
         description: "Restaurante buffet e a la carte no centro de Castro",
         image: "./propagandas/Casantiga.jpeg",
@@ -39,6 +42,7 @@ const ads = [
     {
         id: 4,
         filled: true,
+        dataUltimoPagamento_insercao: "",
         title: "Monteiro Construção Civil",
         description: "- Reformas\n- Pinturas\n- Serviços residencias\n- Arte em Porcelanato\n- Entre Outros\n Castro - Carambeí e Piraí",
         image: "propagandas/MonteiroConstrucaoCivil.png",
@@ -51,6 +55,7 @@ const ads = [
     {
         id: 5,
         filled: true,
+        dataUltimoPagamento_insercao: "",
         title: "Borracharia Butture",
         description: "Pneus Remold a partir de R$ 195,00",
         image: "propagandas/BorrachariaButture.png",
@@ -62,8 +67,16 @@ const ads = [
     },
     {
         id: 6,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "23-04-2025",
+        title: "Piettro Gás",
+        description: "Disk Entregas: Gás, Água e Carvão",
+        image: "propagandas/PiettroGas.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542998156125",
+        addressLink: "https://www.google.com/maps/dir//Rua+Cruz+Machado+1983,+Castro+PR"
     },
     {
         id: 7,
@@ -92,6 +105,36 @@ const ads = [
     },
     {
         id: 12,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 13,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 14,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 15,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 16,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 17,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 18,
         filled: false,
         contactNumber: "5542984023985"
     }
