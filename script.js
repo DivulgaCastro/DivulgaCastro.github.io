@@ -3,7 +3,7 @@ const ads = [
     {
         id: 1,
         filled: true,
-        dataUltimoPagamento_insercao: "22-04-2025",
+        dataUltimoPagamento_insercao: "23-04-2025",
         title: "NoBreak",
         description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
         image: "./propagandas/NoBreak.jpeg",
@@ -16,7 +16,7 @@ const ads = [
     {
         id: 2,
         filled: true,
-        dataUltimoPagamento_insercao: "22-04-2025",
+        dataUltimoPagamento_insercao: "23-04-2025",
         title: "Escape Room PG",
         description: "Salas temáticas com enigmas e desafios para seu grupo desvendar. Você é capaz de escapar em 60 minutos?",
         image: "./propagandas/EscapeRoomPG.jpeg",
@@ -55,7 +55,7 @@ const ads = [
     {
         id: 5,
         filled: true,
-        dataUltimoPagamento_insercao: "",
+        dataUltimoPagamento_insercao: "23-04-2025",
         title: "Borracharia Butture",
         description: "Pneus Remold a partir de R$ 195,00",
         image: "propagandas/BorrachariaButture.png",
@@ -63,7 +63,7 @@ const ads = [
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
         contactNumber: "5542998163036",
-        addressLink: ""
+        addressLink: "https://www.google.com/maps/dir//Tv.+Rio+de+Janeiro,+1421+-+Jardim+das+Araucarias,+Castro+-+PR,+84174-070"
     },
     {
         id: 6,
