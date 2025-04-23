@@ -50,8 +50,15 @@ const ads = [
     },
     {
         id: 5,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        title: "Borracharia Butture",
+        description: "Pneus Remold a partir de R$ 195,00",
+        image: "propagandas/BorrachariaButture.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542998163036",
+        addressLink: ""
     },
     {
         id: 6,
