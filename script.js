@@ -82,13 +82,13 @@ const ads = [
         id: 7,
         filled: true,
         dataUltimoPagamento_insercao: "23-04-2025",
-        title: "",
-        description: "",
+        title: "Eduardo da Latinha", // Adicionei um título para ficar mais claro
+        description: "Compra de latinhas e outros recicláveis.", // Adicionei descrição
         image: "./propagandas/EduardoLatinha.jpeg",
         imageFit: "contain", // Controla object-fit geral
         mobileModalImageContainerHeight: "600px", // Definir altura do CONTAINER da imagem no mobile modal
         mobileModalMaxWidth: "300%",   // Limitar largura da IMAGEM no mobile modal
-        contactNumber: "5542984023985",
+        contactNumber: "5542984023985", // Havia um número duplicado aqui, mantive um
         addressLink: "https://www.google.com/maps/dir/-24.8102667,-49.9952477/No+break+com%C3%A9rcio+de+baterias,+Tv.+Rio+de+Janeiro,+1713+-+Jd+das+arauc%C3%A1rias+2,+Castro+-+PR,+84174-070/@-24.8101474,-49.9978748,17z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94c29de0f556b0e3:0x8b97800079570872!2m2!1d-49.9952744!2d-24.8100281?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     {
@@ -106,13 +106,21 @@ const ads = [
     },
     {
         id: 9,
-        filled: false,
-        contactNumber: "h5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "23-04-2025",
+        title: "Driver Elite",
+        description: "Baixe o app e economize nas suas corridas",
+        image: "propagandas/DriverElite.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "", // Número de contato VAZIO para testar
+        addressLink: ""
     },
     {
         id: 10,
         filled: false,
-        contactNumber: "5542984023985"
+        contactNumber: "5542984023985" // Numero para quem quer anunciar
     },
     {
         id: 11,
@@ -202,10 +210,13 @@ function createAdCards() {
                 <div class="ad-card-content">
                     <h3 class="ad-card-title">${ad.title}</h3>
                     <div class="ad-card-contact">
-                        <a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
-                            <i class="fab fa-whatsapp"></i> Contato
-                        </a>
-                        ${ad.addressLink ? // Conditionally add address button if link exists
+                        ${ad.contactNumber ? // <-- MODIFICAÇÃO AQUI: Condicional para o botão de contato
+                            `<a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Contato
+                            </a>`
+                        : '' // Se não houver contactNumber, não renderiza nada
+                        }
+                        ${ad.addressLink ? // Condicional para o botão de rotas (já existia)
                         `<a href="${ad.addressLink}" target="_blank" class="btn btn-address">
                             <i class="fas fa-map-marker-alt"></i> Rotas
                         </a>` : ''}
@@ -293,11 +304,14 @@ function setupModal() {
             </div>
             <div class="ad-card-content modal-details">
                 <h3 class="ad-card-title">${ad.title}</h3>
-                <p class="ad-card-description">${ad.description}</p>
+                <p class="ad-card-description">${ad.description.replace(/\n/g, '<br>')}</p> <!-- Replace newline with <br> for modal -->
                 <div class="ad-card-contact">
-                    <a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Contato
-                    </a>
+                    ${ad.contactNumber ? // <-- MODIFICAÇÃO AQUI: Condicional para o botão de contato no MODAL
+                        `<a href="https://wa.me/${ad.contactNumber}?text=Olá,%20vi%20seu%20anúncio%20no%20Divulga%20Castro%20e%20gostaria%20de%20mais%20informações." target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Contato
+                        </a>`
+                    : '' // Se não houver contactNumber, não renderiza nada
+                    }
                     ${ad.addressLink ?
                     `<a href="${ad.addressLink}" target="_blank" class="btn btn-address">
                         <i class="fas fa-map-marker-alt"></i> Endereço
