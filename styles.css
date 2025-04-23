@@ -1,3 +1,5 @@
+/* --- START OF FILE styles.css --- */
+
 /* Estilos Gerais */
 :root {
     --primary-color: #198754; /* Green */
@@ -22,6 +24,8 @@ body {
     color: var(--dark-color);
     background-color: #f5f5f5;
     position: relative; /* Needed for modal overlay locking */
+    /* Add padding-bottom on mobile to prevent content from being hidden by fixed counter */
+    padding-bottom: 0; /* Default */
 }
 
 /* Classe para impedir scroll quando o modal está aberto */
@@ -125,7 +129,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping by default */
     padding: 15px 20px;
     position: relative; /* Needed for absolute positioning of mobile nav */
 }
@@ -133,38 +137,49 @@ header .container {
 .logo-container {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
 .logo-container h1 {
     color: var(--primary-color);
     font-size: 28px;
     font-weight: 700;
-    margin: 0;
+    margin: 0; /* Reset margin */
+    margin-right: 15px; /* Space between logo and counter (desktop) */
 }
 
-/* Counter Area Styling */
+/* Counter Area Styling (Desktop - inside logo-container) */
 .counter-container {
-    display: flex;
+    display: flex; /* Changed to flex */
     align-items: center;
     gap: 8px;
+    /* Default state (Desktop) - part of the header flow */
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    z-index: auto;
+    order: 2; /* Comes after H1 */
 }
 
 .counter-label {
     font-size: 13px;
     font-weight: 600;
     color: var(--gray-color);
+    order: 0; /* Reset order */
+    padding-left: 0; /* Reset padding */
 }
-.counter-label-total { color: var(--primary-color); order: 1; }
-.counter-label-today { color: var(--secondary-color); order: 5; }
+/* Keep specific color assignments */
+.counter-label-total { color: var(--primary-color); order: 1;}
+.counter-label-today { color: var(--secondary-color); order: 5; display: none; } /* Hide 'Hoje' label by default */
 
 .counter-icon {
     font-size: 16px;
     line-height: 1;
+    order: 0; /* Reset order */
 }
-.counter-icon-total { color: var(--primary-color); order: 2; }
-.counter-icon-daily { color: var(--secondary-color); order: 4; }
+.counter-icon-total { color: var(--primary-color); order: 2;}
+.counter-icon-daily { color: var(--secondary-color); order: 4; display: none; } /* Hide daily icon by default */
 
 .counter-badge {
     position: relative;
@@ -205,7 +220,8 @@ header .container {
     border: 1px solid rgba(0,0,0,0.2);
     vertical-align: middle;
     background-color: #fff;
-    order: 6; /* Corrigido para ordem correta */
+    order: 6;
+    display: none; /* Hide daily badge by default */
 }
 
 .counter-badge2 img {
@@ -261,6 +277,8 @@ nav ul li a:hover, nav ul li a.active {
     color: var(--dark-color);
     padding: 5px;
     line-height: 1;
+    /* Ensure it doesn't affect flex spacing calculation */
+    flex-shrink: 0;
 }
 
 .hamburger-button:hover {
@@ -569,6 +587,8 @@ footer {
     color: var(--light-gray);
     font-size: 14px;
     opacity: 0.7;
+    /* Give space for the fixed counter on mobile */
+    padding-bottom: 85px; /* Increased slightly for taller counter */
 }
 
 /* --- Estilos do Modal --- */
@@ -786,39 +806,101 @@ footer {
 
 
 @media (max-width: 768px) {
+    /* Add padding to body to prevent content being hidden by fixed counter */
+    body {
+        /* Increased padding slightly for taller counter */
+        padding-bottom: 85px;
+    }
+
+    /* Header layout adjustments for mobile */
     header .container {
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Prevent wrapping logo and hamburger */
+        justify-content: space-between; /* Space out logo area and hamburger */
         align-items: center;
     }
 
     .logo-container {
-        flex-direction: row;
+        /* Allow logo area to grow and center its content */
+        flex-grow: 1;
+        display: flex; /* Use flex for centering h1 */
+        justify-content: center; /* Center h1 horizontally */
         align-items: center;
-        text-align: left;
-        gap: 10px;
-        order: 1;
-        flex-basis: calc(100% - 50px);
-        flex-wrap: wrap;
+        margin-right: 0; /* Remove right margin on mobile */
     }
 
      .logo-container h1 {
-        margin-bottom: 0;
+        margin: 0; /* Reset margin */
+        text-align: center; /* Ensure text itself is centered if needed */
+        font-size: 24px;
      }
 
+    /* --- FIXED COUNTER STYLES --- */
     .counter-container {
-       justify-content: flex-start;
+       position: fixed;
+       bottom: 0;
+       left: 0;
        width: 100%;
-       margin-top: 5px;
+       background-color: rgba(255, 255, 255, 0.95);
+       box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+       padding: 12px 15px;
+       z-index: 999;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       gap: 18px; /* Slightly increased gap for larger elements */
+       order: initial;
+    }
+    /* Reset order for children */
+    .counter-container > * {
+        order: initial !important;
+        padding-left: 0 !important;
     }
 
+    /* Hide daily counter elements on mobile */
+    .counter-label-today, .counter-icon-daily, .counter-badge2 {
+        display: none !important;
+    }
+
+    /* Increase size/visibility of TOTAL counter elements */
+    .counter-label { /* General label styling */
+         font-size: 15px;
+         font-weight: 500;
+    }
+    .counter-label-total {
+        font-size: 17px !important; /* Larger */
+        font-weight: 700 !important; /* Bold */
+    }
+
+    .counter-icon { /* General icon styling */
+        font-size: 18px;
+    }
+    .counter-icon-total {
+        font-size: 22px !important; /* Larger */
+    }
+
+    .counter-badge { /* General badge styling */
+        width: 45px;
+        height: 32px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+     .counter-badge img { right: -3px; } /* Default adjust */
+
+    .counter-badge-total {
+        width: 55px !important; /* Larger */
+        height: 36px !important; /* Larger */
+    }
+     .counter-badge-total img { right: -2px !important; } /* Re-adjust for larger badge */
+
+    /* --- END FIXED COUNTER STYLES --- */
+
+
+    /* Hamburger button */
     .hamburger-button {
         display: block;
-        order: 2;
-        margin-left: auto;
+        flex-shrink: 0;
     }
 
+    /* Mobile Navigation adjustments */
     nav {
         order: 3;
         width: 100%;
@@ -830,6 +912,7 @@ footer {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
+        z-index: 990;
     }
 
     nav.open {
@@ -861,11 +944,12 @@ footer {
         background-color: var(--light-gray);
     }
 
+    /* Other general mobile adjustments */
     .container {
-        padding: 5px;
+        padding: 0 15px;
     }
 
-    .hero { padding: 50px 0; }
+    .hero { padding: 30px 0; }
     .hero h2 { font-size: 28px; }
 
     .ads-grid {
@@ -874,10 +958,11 @@ footer {
     }
 
      .ad-card-image { height: 600px; }
-     .ad-card-content { padding: 20px; z-index: 1; } /* Garante z-index */
-     .ad-card-contact { z-index: 2; } /* Garante z-index */
+     .ad-card-content { padding: 20px; z-index: 1; }
+     .ad-card-contact { z-index: 2; }
      .ad-card.empty { min-height: 400px; }
 
+    /* Footer adjustments */
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -888,8 +973,13 @@ footer {
     }
     .footer-contact p { justify-content: center; }
     .social-media { justify-content: center; }
+    .footer-bottom {
+        /* Increased padding slightly for taller counter */
+        padding-bottom: 90px;
+    }
 
-    /* Modal em telas menores */
+
+    /* Modal adjustments for mobile */
     .modal-container {
         width: 95%;
         max-height: 95vh;
@@ -897,107 +987,95 @@ footer {
      .modal-content {
         padding-left: 15px;
         padding-right: 15px;
-        padding-top: 45px; /* Espaço para fechar */
+        padding-top: 45px;
+        padding-bottom: 15px;
     }
      .modal-nav-btn { font-size: 24px; padding: 8px 12px; }
-     .modal-nav-btn.prev { left: 5px; } /* Ajustado para não sobrepor conteúdo */
-     .modal-nav-btn.next { right: 5px; }/* Ajustado para não sobrepor conteúdo */
-     .modal-close-btn { font-size: 30px; top: 8px; right: 10px; } /* Ajustado */
+     .modal-nav-btn.prev { left: 5px; }
+     .modal-nav-btn.next { right: 5px; }
+     .modal-close-btn { font-size: 30px; top: 8px; right: 10px; }
      .modal-container .ad-card-content.modal-details { padding: 15px; }
 
      /* Image container height reset for medium screens */
      .modal-container .ad-card-image.modal-image {
-        max-height: 45vh; /* Default max height */
-        height: auto; /* Reset explicit height */
+        max-height: 45vh;
+        height: auto;
      }
 }
 
 @media (max-width: 576px) {
 
-    .hero h2 { font-size: 18px; margin-bottom: 10px; }
-    .logo-container { flex-basis: calc(100% - 45px); }
-    .logo-container h1 { font-size: 30px; }
+    .hero h2 { font-size: 22px; margin-bottom: 10px; }
+    .logo-container h1 { font-size: 20px; }
     .hamburger-button { font-size: 22px; }
 
+    /* Counter Styles for very small screens - Inherit most from 768px */
     .counter-container {
-        gap: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 15px; /* Slightly reduce gap */
+        padding: 10px 12px; /* Adjust padding */
     }
-     .counter-label-total { order: 1;}
-     .counter-icon-total { order: 2;}
-     .counter-badge-total { order: 3;}
-     .counter-label-today { order: 4; padding-left: 10px;}
-     .counter-icon-daily { order: 5;}
-     .counter-badge-daily { order: 6;}
+    /* Specific size adjustments if needed, otherwise they inherit from 768px */
+    .counter-label-total {
+        font-size: 16px !important; /* Slightly smaller than 768px */
+    }
+    .counter-icon-total {
+        font-size: 20px !important; /* Slightly smaller than 768px */
+    }
+    .counter-badge-total {
+        width: 50px !important; /* Slightly smaller than 768px */
+        height: 34px !important; /* Slightly smaller than 768px */
+    }
+     .counter-badge-total img { right: -2.5px !important; } /* Re-adjust */
 
-    .counter-label { font-size: 15px; }
-    .counter-icon { font-size: 14px; }
-    .counter-badge, .counter-badge2 { width: 40px; height: 30px; }
 
-
-    .hero p { font-size: 16px; }
+    .hero p { font-size: 15px; }
 
     .ads-grid { grid-template-columns: 1fr; }
     .ad-card-image { height: 520px; }
     .ad-card.empty { min-height: 350px; }
-    .ad-card-content { padding: 15px; z-index: 1; } /* Garante z-index */
+    .ad-card-content { padding: 15px; z-index: 1; }
     .ad-card-title { font-size: 17px; }
     .ad-card-description { font-size: 13px; margin-bottom: 15px; }
-    .ad-card-contact { z-index: 2; } /* Garante z-index */
+    .ad-card-contact { z-index: 2; }
     .btn { padding: 8px 14px; font-size: 13px; }
     .cta-section .btn { font-size: 16px; padding: 10px 20px; }
     .cta-section h2 { font-size: 24px; }
     .cta-section p { font-size: 16px; }
 
-     /* --- Modal em telas muito pequenas --- */
+     /* Footer bottom padding for smallest screens */
+     .footer-bottom {
+        padding-bottom: 85px; /* Ensure enough space */
+     }
 
-     /* Define a altura do CONTAINER da imagem usando a variável JS */
+     /* --- Modal in very small screens --- */
     .modal-container .ad-card-image.modal-image {
-         /* REMOVED max-height: 40vh; */
-         height: var(--mobile-modal-image-container-height, 80vh); /* Use variable for container height */
+         height: var(--mobile-modal-image-container-height, 60vh);
          margin-bottom: 10px;
-         /* Added Flex properties for centering */
          display: flex;
          align-items: center;
          justify-content: center;
-         width: 100%; /* Ensure container takes full width */
-         overflow: hidden; /* Hide image overflow */
+         width: 100%;
+         overflow: hidden;
     }
-
-    /* Define estilos da IMAGEM dentro do container */
     .modal-container .ad-card-image.modal-image img {
-        /* Basic styles */
-        position: static !important; /* Resetar estilos */
+        position: static !important;
         object-fit: contain;
-        display: block; /* Prevent extra space */
-        width: auto; /* Allow natural width */
-        height: 100%; /* Fill the container height */
-        /* REMOVED overflow-y: auto; */
-
-        /* Use CSS Variables set by JS */
-        object-fit: var(--modal-img-object-fit, contain); /* Use variable for object-fit */
-        /* REMOVED max-height rule - height is controlled by container */
-        max-width: var(--mobile-modal-max-width, 150%) !important; /* Use variable for max-width */
+        display: block;
+        width: auto;
+        height: 100%;
+        object-fit: var(--modal-img-object-fit, contain);
+        max-width: var(--mobile-modal-max-width, 150%) !important;
     }
     /* --- END Modal Image Styles --- */
 
     .modal-container .ad-card-title { font-size: 18px; }
     .modal-container .ad-card-description { font-size: 13px; }
-    .modal-nav-btn { display: none; } /* Oculta setas em telas muito pequenas */
-    .modal-content { /* Remove padding lateral para aproveitar espaço sem as setas */
+    .modal-nav-btn { display: none; }
+    .modal-content {
          padding-left: 10px;
          padding-right: 10px;
-    }
-
-    .counter-badge2 img {
-        position: absolute;
-        top: 0;
-        right: -40px;
-        height: 100%;
-        width: auto;
-        max-width: none;
-        display: block;
+         padding-bottom: 10px;
     }
 
 }
+/* --- END OF FILE styles.css --- */

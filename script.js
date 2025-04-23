@@ -16,13 +16,13 @@ const ads = [
         id: 2,
         filled: true,
         title: "Escape Room PG",
-        description: "Tente escapar de diversas salas temazidas em 60 minutos!",
+        description: "Salas temáticas com enigmas e desafios para seu grupo desvendar. Você é capaz de escapar em 60 minutos?",
         image: "./propagandas/EscapeRoomPG.jpeg",
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
-        contactNumber: "5542999992222",
-        addressLink: "https://goo.gl/maps/placeholder2"
+        contactNumber: "5542999621558",
+        addressLink: "https://www.google.com/maps/dir//R.+Dr.+Sizenando+Bourguignon,+581+-+Vila+Santa+Cruz,+Castro+-+PR,+84168-030"
     },
     {
         id: 3,
@@ -38,8 +38,15 @@ const ads = [
     },
     {
         id: 4,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        title: "Monteiro Construção Civil",
+        description: "- Reformas\n- Pinturas\n- Serviços residencias\n- Arte em Porcelanato\n- Entre Outros\n Castro - Carambeí e Piraí",
+        image: "propagandas/MonteiroConstrucaoCivil.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999365788",
+        addressLink: ""
     },
     {
         id: 5,
@@ -134,7 +141,7 @@ function createAdCards() {
                         </a>
                         ${ad.addressLink ? // Conditionally add address button if link exists
                         `<a href="${ad.addressLink}" target="_blank" class="btn btn-address">
-                            <i class="fas fa-map-marker-alt"></i> Endereço
+                            <i class="fas fa-map-marker-alt"></i> Rotas
                         </a>` : ''}
                     </div>
                 </div>
