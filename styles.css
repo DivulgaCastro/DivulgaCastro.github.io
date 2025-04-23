@@ -183,7 +183,7 @@ header .container {
 
 .counter-badge {
     position: relative;
-    width: 35px;
+    width: 45px;
     height: 28px;
     overflow: hidden;
     border-radius: 4px;
@@ -200,7 +200,7 @@ header .container {
 .counter-badge img {
     position: absolute;
     top: 0;
-    right: -4.5px; /* Fine-tune this */
+    right: -4px; /* Fine-tune this */
     height: 100%;
     width: auto;
     max-width: none;
@@ -883,13 +883,14 @@ footer {
         height: 32px;
         box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
-     .counter-badge img { right: -3px; } /* Default adjust */
+    
+    .counter-badge img { right: -100px; } /* Default adjust */
 
     .counter-badge-total {
         width: 55px !important; /* Larger */
         height: 36px !important; /* Larger */
     }
-     .counter-badge-total img { right: -2px !important; } /* Re-adjust for larger badge */
+     .counter-badge-total img { right: 30px !important; } /* Re-adjust for larger badge */
 
     /* --- END FIXED COUNTER STYLES --- */
 
@@ -1025,8 +1026,8 @@ footer {
         width: 50px !important; /* Slightly smaller than 768px */
         height: 34px !important; /* Slightly smaller than 768px */
     }
-     .counter-badge-total img { right: -2.5px !important; } /* Re-adjust */
 
+    .counter-badge-total img { right: -7.5px !important; } /* Re-adjust */
 
     .hero p { font-size: 15px; }
 
