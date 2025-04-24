@@ -142,9 +142,9 @@ const ads = [
     },
     {
         id: 11,
-        filled: false,
-        dataUltimoPagamento_insercao: "",
-        diasParaVencer: 0,
+        filled: true,
+        dataUltimoPagamento_insercao: "24-04-2025",
+        diasParaVencer: 40,
         title: "TecnoBombasIapó",
         description: "Perfuração, manutenção e poços artesianos",
         image: "propagandas/TecnoBombasIapo.png",
