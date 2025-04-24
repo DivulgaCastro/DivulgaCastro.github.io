@@ -156,8 +156,17 @@ const ads = [
     },
     {
         id: 12,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "24-04-2025",
+        diasParaVencer: 30,
+        title: "Dias Negão Panfletagem",
+        description: "Atendo Castro, Piraí do Sul, Carambeí e Ponta Grossa",
+        image: "propagandas/DiasNegao.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542998644451",
+        addressLink: ""
     },
     {
         id: 13,
