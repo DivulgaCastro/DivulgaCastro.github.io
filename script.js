@@ -211,10 +211,10 @@ const ads = [
         addressLink: ""
     },
     {
-        iid: 16,
+        id: 16,
         filled: true,
         dataUltimoPagamento_insercao: "25-04-2025",
-        diasParaVencer: 30,
+        diasParaVencer: 35,
         title: "MangPress",
         description: "Prensagem de mangueiras",
         image: "propagandas/MangPress.png",
@@ -226,8 +226,17 @@ const ads = [
     },
     {
         id: 17,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 30,
+        title: "Mini-Mercado Guga",
+        description: "Oportunidade em Castro-PR, Mini-Mercado à venda",
+        image: "propagandas/MiniMercadoGuga.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542988866391",
+        addressLink: "https://www.google.com/maps/dir//Rua+Antônio+José+Gomes,+1026+-+Vila+Rio+Branco,+Castro+-+PR"
     },
     {
         id: 18,
