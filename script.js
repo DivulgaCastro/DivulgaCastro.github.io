@@ -129,7 +129,7 @@ const ads = [
     {
         id: 10,
         filled: true,
-        dataUltimoPagamento_insercao: "24-04-2025",
+        dataUltimoPagamento_insercao: "Não pago",
         diasParaVencer: 30,
         title: "Ferro Velho e Reciclagem - Nossa Senhora Aparecida",
         description: "Compra e Venda",
@@ -171,7 +171,7 @@ const ads = [
     {
         id: 13,
         filled: true,
-        dataUltimoPagamento_insercao: "24-04-2025",
+        dataUltimoPagamento_insercao: "25-04-2025",
         diasParaVencer: 45,
         title: "Casa a venda em PG",
         description: "",
@@ -198,8 +198,17 @@ const ads = [
     },
     {
         id: 15,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 30,
+        title: "Guincho Camargo",
+        description: "Socorro 24h com rapidez e segurança",
+        image: "propagandas/GuinchoCamargo.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999079239",
+        addressLink: ""
     },
     {
         id: 16,
@@ -213,6 +222,66 @@ const ads = [
     },
     {
         id: 18,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 19,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 20,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 21,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 22,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 23,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 24,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 25,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 26,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 27,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 28,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 29,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 30,
         filled: false,
         contactNumber: "5542984023985"
     }
