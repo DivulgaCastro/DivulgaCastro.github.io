@@ -240,8 +240,17 @@ const ads = [
     },
     {
         id: 18,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 30,
+        title: "Eli Ferragens",
+        description: "Ferro e aço",
+        image: "propagandas/EliFerragens.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542988261078",
+        addressLink: "https://www.google.com/maps/dir//Av.+Rio+de+Janeiro,+1702+-+Castro+-+PR"
     },
     {
         id: 19,
