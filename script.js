@@ -200,7 +200,7 @@ const ads = [
         id: 15,
         filled: true,
         dataUltimoPagamento_insercao: "25-04-2025",
-        diasParaVencer: 30,
+        diasParaVencer: 45,
         title: "Guincho Camargo",
         description: "Socorro 24h com rapidez e segurança",
         image: "propagandas/GuinchoCamargo.png",
@@ -211,9 +211,18 @@ const ads = [
         addressLink: ""
     },
     {
-        id: 16,
-        filled: false,
-        contactNumber: "5542984023985"
+        iid: 16,
+        filled: true,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 30,
+        title: "MangPress",
+        description: "Prensagem de mangueiras",
+        image: "propagandas/MangPress.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999715054",
+        addressLink: "https://www.google.com/maps/dir//Rua+Dr+Otavio+Novaes+Junior,+825+-+Jardim+Social+Arapongas,+Castro+-+PR,+84174-270"
     },
     {
         id: 17,
