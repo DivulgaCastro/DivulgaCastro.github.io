@@ -172,7 +172,7 @@ const ads = [
         id: 13,
         filled: true,
         dataUltimoPagamento_insercao: "24-04-2025",
-        diasParaVencer: 30,
+        diasParaVencer: 45,
         title: "Casa a venda em PG",
         description: "",
         image: "propagandas/ComandanteCondominio.jpeg",
@@ -184,8 +184,17 @@ const ads = [
     },
     {
         id: 14,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "Bonificação",
+        diasParaVencer: 0,
+        title: "NoBreak",
+        description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
+        image: "./propagandas/NoBreak2.jpeg",
+        imageFit: "contain", // Controla object-fit geral
+        mobileModalImageContainerHeight: "600px", // Definir altura do CONTAINER da imagem no mobile modal
+        mobileModalMaxWidth: "300%",   // Limitar largura da IMAGEM no mobile modal
+        contactNumber: "5542984023985",
+        addressLink: "https://www.google.com/maps/dir/-24.8102667,-49.9952477/No+break+com%C3%A9rcio+de+baterias,+Tv.+Rio+de+Janeiro,+1713+-+Jd+das+arauc%C3%A1rias+2,+Castro+-+PR,+84174-070/@-24.8101474,-49.9978748,17z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x94c29de0f556b0e3:0x8b97800079570872!2m2!1d-49.9952744!2d-24.8100281?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D"
     },
     {
         id: 15,
