@@ -170,8 +170,17 @@ const ads = [
     },
     {
         id: 13,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "24-04-2025",
+        diasParaVencer: 30,
+        title: "Casa a venda em PG",
+        description: "",
+        image: "propagandas/ComandanteCondominio.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999127510",
+        addressLink: "https://www.google.com/maps/dir//Rua+Engenheiro+Rebouças+246,+Uvaranas,+Ponta+Grossa+-+PR"
     },
     {
         id: 14,
