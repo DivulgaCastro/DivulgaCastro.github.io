@@ -163,8 +163,8 @@ header .container {
 }
 
 .counter-label {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 700;
     color: var(--gray-color);
     order: 0; /* Reset order */
     padding-left: 0; /* Reset padding */
@@ -174,7 +174,7 @@ header .container {
 .counter-label-today { color: var(--secondary-color); order: 5; display: none; } /* Hide 'Hoje' label by default */
 
 .counter-icon {
-    font-size: 16px;
+    font-size: 40px;
     line-height: 1;
     order: 0; /* Reset order */
 }
@@ -183,8 +183,8 @@ header .container {
 
 .counter-badge {
     position: relative;
-    width: 45px;
-    height: 28px;
+    width: 90px;
+    height: 60px;
     overflow: hidden;
     border-radius: 4px;
     display: inline-flex;
@@ -200,7 +200,7 @@ header .container {
 .counter-badge img {
     position: absolute;
     top: 0;
-    right: -4px; /* Fine-tune this */
+    right: -15px; /* Fine-tune this */
     height: 100%;
     width: auto;
     max-width: none;
