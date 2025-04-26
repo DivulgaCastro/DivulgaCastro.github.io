@@ -282,8 +282,17 @@ const ads = [
     },
     {
         id: 21,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "26-04-2025",
+        diasParaVencer: 30,
+        title: "Cama, mesa, banho e proodutos importados",
+        description: "Aceitamos encomendas",
+        image: "propagandas/Freski.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542998234477",
+        addressLink: "https://www.google.com/maps/dir//Rua+Carlos+Edson+Martins+de+Oliveira+52,+Castro+-+PR"
     },
     {
         id: 22,
