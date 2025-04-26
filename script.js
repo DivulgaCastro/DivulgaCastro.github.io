@@ -45,8 +45,8 @@ const ads = [
     {
         id: 4,
         filled: true,
-        dataUltimoPagamento_insercao: "",
-        diasParaVencer: 0,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 45,
         title: "Monteiro Construção Civil",
         description: "- Reformas\n- Pinturas\n- Serviços residencias\n- Arte em Porcelanato\n- Entre Outros\n Castro - Carambeí e Piraí",
         image: "propagandas/MonteiroConstrucaoCivil.png",
@@ -278,7 +278,7 @@ const ads = [
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
         contactNumber: "5542999711787",
-        addressLink: ""
+        addressLink: "https://www.google.com/maps/dir//R.+Dr.+Sizenando+Bourguignon,+581+-+Vila+Santa+Cruz,+Castro+-+PR,+84168-030"
     },
     {
         id: 21,
