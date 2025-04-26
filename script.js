@@ -255,8 +255,8 @@ const ads = [
     {
         id: 19,
         filled: true,
-        dataUltimoPagamento_insercao: "25-04-2025",
-        diasParaVencer: 30,
+        dataUltimoPagamento_insercao: "26-04-2025",
+        diasParaVencer: 35,
         title: "Compro Latinha",
         description: "",
         image: "propagandas/Francisval.jpeg",
@@ -268,8 +268,17 @@ const ads = [
     },
     {
         id: 20,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "26-04-2025",
+        diasParaVencer: 30,
+        title: "Compro Sucata De Eletrônicos",
+        description: "Celulares, memórias, processadores, placas ,baterias, eletrônicos e não ferrosos em geral",
+        image: "propagandas/CassianoSucataEletronicos.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999711787",
+        addressLink: ""
     },
     {
         id: 21,
