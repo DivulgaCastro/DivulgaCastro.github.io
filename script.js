@@ -296,8 +296,17 @@ const ads = [
     },
     {
         id: 22,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "Não Pago",
+        diasParaVencer: 0,
+        title: "W. R. Martelinho de Ouro",
+        description: "",
+        image: "propagandas/WRMartelinhoDeOuro.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542991463889",
+        addressLink: "https://www.google.com/maps/dir//Av.+Rio+de+Janeiro,+1436,+Castro+-+PR"
     },
     {
         id: 23,
