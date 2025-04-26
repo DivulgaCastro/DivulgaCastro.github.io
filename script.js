@@ -254,8 +254,17 @@ const ads = [
     },
     {
         id: 19,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "25-04-2025",
+        diasParaVencer: 30,
+        title: "Compro Latinha",
+        description: "",
+        image: "propagandas/Francisval.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999380387",
+        addressLink: ""
     },
     {
         id: 20,
