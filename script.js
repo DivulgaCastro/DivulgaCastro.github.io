@@ -301,11 +301,11 @@ const ads = [
         diasParaVencer: 0,
         title: "W. R. Martelinho de Ouro",
         description: "",
-        image: "propagandas/WRMartelinhoDeOuro.jpeg",
+        image: "propagandas/WRMartelinhoDeOuro.png",
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
-        contactNumber: "5542991463889",
+        contactNumber: "5542999144466",
         addressLink: "https://www.google.com/maps/dir//Av.+Rio+de+Janeiro,+1436,+Castro+-+PR"
     },
     {
