@@ -128,7 +128,7 @@ const ads = [
     },
     {
         id: 10,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "Não pago",
         diasParaVencer: 30,
         title: "Ferro Velho e Reciclagem - Nossa Senhora Aparecida",
@@ -297,8 +297,8 @@ const ads = [
     {
         id: 22,
         filled: true,
-        dataUltimoPagamento_insercao: "Não Pago",
-        diasParaVencer: 0,
+        dataUltimoPagamento_insercao: "26-04-2025",
+        diasParaVencer: 60,
         title: "W. R. Martelinho de Ouro",
         description: "",
         image: "propagandas/WRMartelinhoDeOuro.png",
