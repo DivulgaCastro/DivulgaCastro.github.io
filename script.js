@@ -1,3 +1,4 @@
+// --- START OF FILE script.js ---
 // Array com os anúncios (alguns preenchidos e outros vazios)
 const ads = [
     {
@@ -581,14 +582,39 @@ function setupModal() {
     });
 }
 
+// --- Função para buscar e logar visualizações --- START OF ADDED CODE
+function fetchAndLogHits() {
+    const apiUrl = 'https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdivulgacastro.github.io%2F&label=a&icon=github&color=%23198754&output=json';
+    console.log("Fetching hits data...");
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("--- Hit Counter Data ---");
+            console.log(`Today's Hits: ${data.today_hits}`);
+            console.log(`Total Hits:   ${data.total_hits}`);
+            console.log("------------------------");
+        })
+        .catch(error => {
+            console.error("Error fetching or processing hits data:", error);
+        });
+}
+// --- END OF ADDED CODE ---
 
 // Função para inicializar a página
 function initPage() {
     createAdCards(); // Cria os cards primeiro
     setupHamburgerMenu(); // Inicializa o menu hamburger
     setupModal(); // Inicializa a lógica do modal
-    console.log("Contador de visualização carregado via imagem de badge no HTML.");
+    fetchAndLogHits(); // Busca e loga os hits **<-- ADDED CALL**
+    console.log("Contador de visualização (badge) carregado via imagem no HTML.");
     // Os listeners para abrir o modal são adicionados dentro de createAdCards agora
 }
 
 document.addEventListener('DOMContentLoaded', initPage);
+// --- END OF FILE script.js ---
