@@ -324,9 +324,18 @@ const ads = [
         addressLink: ""
     },
     {
-        id: 24,
-        filled: false,
-        contactNumber: "5542984023985"
+        id: 23,
+        filled: true,
+        dataUltimoPagamento_insercao: "29-04-2025",
+        diasParaVencer: 30,
+        title: "JF Pinturas (Bitcho Pintor)",
+        description: "Serviços de pintura , massa corrida , grafiato e muito mais\nServiço de Qualidade para conservar e embelezar sua residência e comércio",
+        image: "propagandas/JFPinturas(Bitcho Pintor).png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542991023156",
+        addressLink: ""
     },
     {
         id: 25,
