@@ -303,6 +303,7 @@ const ads = [
     {
         id: 23,
         filled: true,
+        dataUltimoPagamento_insercao: "28-04-2025",
         title: "GamaTur",
         description: "",
         image: "propagandas/GamaTur.png",
@@ -581,27 +582,27 @@ function setupModal() {
 }
 
 // --- Função para buscar e logar visualizações --- START OF ADDED CODE
-function fetchAndLogHits() {
-    const apiUrl = 'https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdivulgacastro.github.io%2F&label=a&icon=github&color=%23198754&output=json';
-    console.log("Fetching hits data...");
+// function fetchAndLogHits() {
+//     const apiUrl = 'https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdivulgacastro.github.io%2F&label=a&icon=github&color=%23198754&output=json';
+//     console.log("Fetching hits data...");
 
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("--- Hit Counter Data ---");
-            console.log(`Today's Hits: ${data.today_hits}`);
-            console.log(`Total Hits:   ${data.total_hits}`);
-            console.log("------------------------");
-        })
-        .catch(error => {
-            console.error("Error fetching or processing hits data:", error);
-        });
-}
+//     fetch(apiUrl)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error(`HTTP error! status: ${response.status}`);
+//             }
+//             return response.json();
+//         })
+//         .then(data => {
+//             console.log("--- Hit Counter Data ---");
+//             console.log(`Today's Hits: ${data.today_hits}`);
+//             console.log(`Total Hits:   ${data.total_hits}`);
+//             console.log("------------------------");
+//         })
+//         .catch(error => {
+//             console.error("Error fetching or processing hits data:", error);
+//         });
+// }
 // --- END OF ADDED CODE ---
 
 // Função para inicializar a página
