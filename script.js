@@ -130,16 +130,7 @@ const ads = [
     {
         id: 10,
         filled: false,
-        dataUltimoPagamento_insercao: "Não pago",
-        diasParaVencer: 30,
-        title: "Ferro Velho e Reciclagem - Nossa Senhora Aparecida",
-        description: "Compra e Venda",
-        image: "propagandas/Ferro Velho e Reciclagem - Nossa Senhora Aparecida.png",
-        imageFit: "contain",
-        mobileModalImageContainerHeight: "50vh",
-        mobileModalMaxWidth: "100%",
-        contactNumber: "5542998172760",
-        addressLink: "https://www.google.com/maps/dir//Av.+Vicente+fiorillo+3a,+castro+PR"
+        contactNumber: "5542984023985"
     },
     {
         id: 11,
@@ -311,8 +302,15 @@ const ads = [
     },
     {
         id: 23,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        title: "GamaTur",
+        description: "",
+        image: "propagandas/GamaTur.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999823737",
+        addressLink: ""
     },
     {
         id: 24,
