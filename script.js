@@ -324,7 +324,7 @@ const ads = [
         addressLink: ""
     },
     {
-        id: 23,
+        id: 24,
         filled: true,
         dataUltimoPagamento_insercao: "29-04-2025",
         diasParaVencer: 30,
@@ -339,8 +339,17 @@ const ads = [
     },
     {
         id: 25,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "Meu",
+        diasParaVencer: 0,
+        title: "Pronto Socorro TI",
+        description: "Websites, desenvolvimento, análise e programação",
+        image: "propagandas/ProntoSocorroTI.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542984081387",
+        addressLink: ""
     },
     {
         id: 26,
