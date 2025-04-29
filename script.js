@@ -124,13 +124,22 @@ const ads = [
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
-        contactNumber: "", // Número de contato VAZIO para testar
+        contactNumber: "",
         addressLink: ""
     },
     {
         id: 10,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "29-04-2025",
+        diasParaVencer: 30,
+        title: "Novo Progresso Barbearia",
+        description: "Elizeu Ribeiro",
+        image: "propagandas/NovoProgressoBarbearia.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999443130",
+        addressLink: "https://www.google.com/maps/dir//Rua+Cel.+Olegário+de+Macedo,+681+-+Centro+-+Castro+-+PR"
     },
     {
         id: 11,
@@ -304,6 +313,7 @@ const ads = [
         id: 23,
         filled: true,
         dataUltimoPagamento_insercao: "28-04-2025",
+        diasParaVencer: 30,
         title: "GamaTur",
         description: "",
         image: "propagandas/GamaTur.png",
