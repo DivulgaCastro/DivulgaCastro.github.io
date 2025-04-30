@@ -363,7 +363,7 @@ const ads = [
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
         contactNumber: "5542999927547",
-        addressLink: ""
+        addressLink: "https://www.google.com/maps/dir//RUA+MIGUEL+AIÇAR+DE+SUSS,+344+-+Jardim+Colonial,+Castro+-+PR,+84178-110"
     },
     {
         id: 27,
@@ -382,6 +382,36 @@ const ads = [
     },
     {
         id: 30,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 31,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 32,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 33,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 34,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 35,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 36,
         filled: false,
         contactNumber: "5542984023985"
     }
