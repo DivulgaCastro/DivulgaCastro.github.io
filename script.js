@@ -381,8 +381,17 @@ const ads = [
     },
     {
         id: 28,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "30-04-2025",
+        diasParaVencer: 30,
+        title: "SalvCar - Lataria e Pintura",
+        description: "Lataria e Pintura, Retoques em Geral, Soldas, Polimento, Espelhamento, Recuperação e Personalização de Para-choques",
+        image: "propagandas/SalvCar.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999547958",
+        addressLink: "https://www.google.com/maps/dir//Rua+7+de+Setembro,+1100+-+Morada+do+Sol+V+-+Castro-PR"
     },
     {
         id: 29,
