@@ -354,7 +354,7 @@ const ads = [
     {
         id: 26,
         filled: true,
-        dataUltimoPagamento_insercao: "29-04-2025",
+        dataUltimoPagamento_insercao: "30-04-2025",
         diasParaVencer: 30,
         title: "Ávila Auto Mecânica",
         description: "Fazemos câmbio automático e troca de óleo de câmbio automático, motor, suspensão, troca de óleo, manutenção e revisão em geral, escaneamento de falhas",
@@ -367,8 +367,17 @@ const ads = [
     },
     {
         id: 27,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "30-04-2025",
+        diasParaVencer: 30,
+        title: "Lava Car AutoSplash",
+        description: "Lavagem Completa, Lavagem com Cera, Hidratação de Couro, Higienização, Lavagem de Aparência",
+        image: "propagandas/LavaCarAutoSplash.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999442959",
+        addressLink: "https://www.google.com/maps/dir//R.+Urbano+Borges+Martins,+38,+Centro,+Castro+PR"
     },
     {
         id: 28,
