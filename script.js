@@ -395,8 +395,17 @@ const ads = [
     },
     {
         id: 29,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "01-05-2025",
+        diasParaVencer: 30,
+        title: "LA CASA DO XIS",
+        description: "",
+        image: "propagandas/LaCasaDoXis.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999554604",
+        addressLink: "https://www.google.com/maps/dir//Rua+Valdevina+Rodrigues+dos+Santos,+3+Castro"
     },
     {
         id: 30,
