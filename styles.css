@@ -183,7 +183,7 @@ header .container {
 
 .counter-badge {
     position: relative;
-    width: 90px;
+    width: 110px;
     height: 60px;
     overflow: hidden;
     border-radius: 4px;
@@ -883,7 +883,7 @@ footer {
     }
 
     .counter-badge { /* General badge styling */
-        width: 45px;
+        width: 65px;
         height: 32px;
         box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
@@ -891,7 +891,7 @@ footer {
     .counter-badge img { right: -100px; } /* Default adjust */
 
     .counter-badge-total {
-        width: 55px !important; /* Larger */
+        width: 65px !important; /* Larger */
         height: 36px !important; /* Larger */
     }
      .counter-badge-total img { right: 30px !important; } /* Re-adjust for larger badge */
@@ -1033,11 +1033,11 @@ footer {
         font-size: 20px !important; /* Slightly smaller than 768px */
     }
     .counter-badge-total {
-        width: 50px !important; /* Slightly smaller than 768px */
+        width: 60px !important; /* Slightly smaller than 768px */
         height: 34px !important; /* Slightly smaller than 768px */
     }
 
-    .counter-badge-total img { right: -7.5px !important; } /* Re-adjust */
+    .counter-badge-total img { right: -9px !important; } /* Re-adjust */
 
     .hero p { font-size: 15px; }
 
