@@ -409,8 +409,17 @@ const ads = [
     },
     {
         id: 30,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "03-05-2025",
+        diasParaVencer: 30,
+        title: "Cappadócia Delivery",
+        description: "🚚 Exclusivo para entregas em Castro-PR.⏰ Qua a dom, 18h às 22h ",
+        image: "propagandas/CappadociaDelivery.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999600579",
+        addressLink: ""
     },
     {
         id: 31,
