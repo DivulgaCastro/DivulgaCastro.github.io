@@ -437,8 +437,17 @@ const ads = [
     },
     {
         id: 32,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "06-05-2025",
+        diasParaVencer: 30,
+        title: "Chame o Chico",
+        description: "24 horas",
+        image: "propagandas/ChameOChico.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999603960",
+        addressLink: ""
     },
     {
         id: 33,
