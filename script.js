@@ -438,7 +438,7 @@ const ads = [
     {
         id: 32,
         filled: true,
-        dataUltimoPagamento_insercao: "06-05-2025",
+        dataUltimoPagamento_insercao: "Cobrar quando vier comprar baterias",
         diasParaVencer: 30,
         title: "Chame o Chico",
         description: "24 horas",
@@ -451,8 +451,17 @@ const ads = [
     },
     {
         id: 33,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "06-05-2025",
+        diasParaVencer: 30,
+        title: "Adriano Valansuelo",
+        description: "Montagem manutenção e limpeza de sistemas de geração distribuída",
+        image: "propagandas/AdrianoValansuelo.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999067057",
+        addressLink: ""
     },
     {
         id: 34,
