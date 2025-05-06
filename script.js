@@ -479,11 +479,65 @@ const ads = [
     },
     {
         id: 35,
+        filled: true,
+        dataUltimoPagamento_insercao: "06-05-2025",
+        diasParaVencer: 30,
+        title: "Silva - Auto Mecânica",	
+        description: "Instalação de alarme, Som, Motor de arranque, Faço alternador, Revisão de chicote, Revisão de sinaleiros, Vidros e travas elétricas",
+        image: "propagandas/SilvaAutoMecanica.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999339795",
+        addressLink: "https://www.google.com/maps/dir//R.+Oscar+Wisoski,+45+-+Cantagalo,+Castro+-+PR"
+    },
+    {
+        id: 36,
         filled: false,
         contactNumber: "5542984023985"
     },
     {
-        id: 36,
+        id: 37,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 38,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 39,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 40,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 41,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 42,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 43,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 44,
+        filled: false,
+        contactNumber: "5542984023985"
+    },
+    {
+        id: 45,
         filled: false,
         contactNumber: "5542984023985"
     }
