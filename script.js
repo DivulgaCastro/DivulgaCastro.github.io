@@ -423,8 +423,17 @@ const ads = [
     },
     {
         id: 31,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "06-05-2025",
+        diasParaVencer: 30,
+        title: "Celina Vendedora",
+        description: "Catálogos, venda de lingeries, escova progressiva. Atendo a domicílio.",
+        image: "propagandas/CelinaVendedora.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999407739",
+        addressLink: "https://www.google.com/maps/dir//R.+Helcias+Scheleski,+114+-+Jardim+Bela+Vista,+Castro+-+PR,+84165-415"
     },
     {
         id: 32,
