@@ -465,8 +465,17 @@ const ads = [
     },
     {
         id: 34,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "06-05-2025",
+        diasParaVencer: 30,
+        title: "Roth Facas - Facas e artigos de pesca",
+        description: "Rifas de lindas facas",
+        image: "propagandas/RothFacas.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542998747109",
+        addressLink: "https://www.google.com/maps/dir//R.+Theophilo+Brepohl,+146+-+Colonia+Dona+Luiza,+Ponta+Grossa+-+PR,+84046-728"
     },
     {
         id: 35,
