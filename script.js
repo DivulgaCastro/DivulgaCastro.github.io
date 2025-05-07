@@ -774,29 +774,53 @@ function setupModal() {
     });
 }
 
-// --- Função para buscar e logar visualizações --- START OF ADDED CODE
-// function fetchAndLogHits() {
-//     const apiUrl = 'https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdivulgacastro.github.io%2F&label=a&icon=github&color=%23198754&output=json';
-//     console.log("Fetching hits data...");
 
-//     fetch(apiUrl)
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             return response.json();
-//         })
-//         .then(data => {
-//             console.log("--- Hit Counter Data ---");
-//             console.log(`Today's Hits: ${data.today_hits}`);
-//             console.log(`Total Hits:   ${data.total_hits}`);
-//             console.log("------------------------");
-//         })
-//         .catch(error => {
-//             console.error("Error fetching or processing hits data:", error);
-//         });
-// }
-// --- END OF ADDED CODE ---
+function TEST () {
+    const testApiUrl = 'http://divulgacastroapi.great-site.net/api/get_counts.php';
+    console.log(`[TEST SCRIPT] Attempting to fetch page views from: ${testApiUrl}`);
+
+    fetch(testApiUrl)
+    .then(response => {
+        console.log('[TEST SCRIPT] Received response object:', response);
+        console.log(`[TEST SCRIPT] Response Status: ${response.status} ${response.statusText}`);
+        if (!response.ok) {
+        // Try to get text even for error responses for more info
+        return response.text().then(text => {
+            throw new Error(`API request failed with status ${response.status}. Server Response: ${text}`);
+        });
+        }
+        // Check Content-Type header if possible (useful for debugging)
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            console.log("[TEST SCRIPT] Content-Type is JSON, proceeding to parse.");
+            return response.json(); // Parse JSON body
+        } else {
+            console.warn("[TEST SCRIPT] Response Content-Type is not application/json:", contentType);
+            // Attempt to get text anyway
+            return response.text().then(text => {
+                throw new Error(`Expected JSON response but got Content-Type: ${contentType}. Response text: ${text}`);
+            });
+        }
+    })
+    .then(result => {
+        console.log('[TEST SCRIPT] Parsed API Response Body:', result);
+        if (result && result.success && result.data && result.data.page_views !== undefined) {
+        console.log(`%c[TEST SCRIPT] SUCCESS: Page Views from DB = ${result.data.page_views}`, 'color: green; font-weight: bold;');
+        } else {
+        console.warn('[TEST SCRIPT] API call seemed successful (status 200), but data format is unexpected or success flag is false.', result);
+        }
+    })
+    .catch(error => {
+        console.error('%c[TEST SCRIPT] ERROR fetching page views:', 'color: red; font-weight: bold;', error);
+        if (error instanceof TypeError) {
+            console.error('%c[TEST SCRIPT] This is likely a Network Error (server unreachable, DNS issue) or a CORS Policy Block. Check the error message above and the Network tab for details. Ensure API URL is correct and accessible.', 'color: orange;');
+        } else {
+            console.error('%c[TEST SCRIPT] This might be a server-side error (non-2xx status) or an issue processing the response.', 'color: orange;');
+        }
+    });
+};
+
+TEST(); // Call the test function to see if it works
 
 // Função para inicializar a página
 function initPage() {
