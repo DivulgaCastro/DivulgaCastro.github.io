@@ -498,7 +498,7 @@ const ads = [
         diasParaVencer: 30,
         title: "Vendo forno Venâncio pão e pizza",	
         description: "Semi-novo",
-        image: "propagandas/FornoPãoEpizza.jpeg",
+        image: "propagandas/FornoPaoEpizza.jpeg",
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
@@ -829,14 +829,14 @@ function TEST () {
     });
 };
 
-TEST(); // Call the test function to see if it works
+// TEST(); // Call the test function to see if it works
 
 // Função para inicializar a página
 function initPage() {
     createAdCards(); // Cria os cards primeiro
     setupHamburgerMenu(); // Inicializa o menu hamburger
     setupModal(); // Inicializa a lógica do modal
-    fetchAndLogHits(); // Busca e loga os hits **<-- ADDED CALL**
+    // fetchAndLogHits(); // Busca e loga os hits **<-- ADDED CALL**
     console.log("Contador de visualização (badge) carregado via imagem no HTML.");
     // Os listeners para abrir o modal são adicionados dentro de createAdCards agora
 }
