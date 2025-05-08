@@ -492,9 +492,18 @@ const ads = [
         addressLink: "https://www.google.com/maps/dir//R.+Oscar+Wisoski,+45+-+Cantagalo,+Castro+-+PR"
     },
     {
-        id: 36,
-        filled: false,
-        contactNumber: "5542984023985"
+        id: 35,
+        filled: true,
+        dataUltimoPagamento_insercao: "08-05-2025",
+        diasParaVencer: 30,
+        title: "Vendo forno Venâncio pão e pizza",	
+        description: "Semi-novo",
+        image: "propagandas/FornoPãoEpizza.jpeg",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542991444246",
+        addressLink: "https://www.google.com/maps/dir//Rua+Conselheiro+Laurindo+Abelardo+de+Brito,+Quadra+38+Lote+20,+Castro+-+PR"
     },
     {
         id: 37,
