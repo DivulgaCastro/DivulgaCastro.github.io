@@ -498,7 +498,7 @@ const ads = [
         diasParaVencer: 30,
         title: "Vendo forno Venâncio pão e pizza",	
         description: "Semi-novo",
-        image: "propagandas/FornoPaoEpizza.jpeg",
+        image: "propagandas/FornoVenancio.png",
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
