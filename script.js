@@ -517,7 +517,7 @@ const ads = [
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
         contactNumber: "5542999554240",
-        addressLink: "https://www.google.com/maps/dir//Rua+Karl+Joseph+Hoffman,+Castro+PR"
+        addressLink: "https://www.google.com/maps/dir//Rua+Karl+Joseph+Hoffman+153,+Castro+PR"
     },
     {
         id: 38,
