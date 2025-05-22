@@ -507,8 +507,17 @@ const ads = [
     },
     {
         id: 37,
-        filled: false,
-        contactNumber: "5542984023985"
+        filled: true,
+        dataUltimoPagamento_insercao: "22-05-2025",
+        diasParaVencer: 30,
+        title: "Supermercado Dia a Dia",	
+        description: "Oportunidade única, o mercado Dia a Dia está à venda.",
+        image: "propagandas/SupermercadoDiaADia.png",
+        imageFit: "contain",
+        mobileModalImageContainerHeight: "50vh",
+        mobileModalMaxWidth: "100%",
+        contactNumber: "5542999554240",
+        addressLink: "https://www.google.com/maps/dir//Rua+Karl+Joseph+Hoffman,+Castro+PR"
     },
     {
         id: 38,
