@@ -4,7 +4,7 @@ const ads = [
     {
         id: 1,
         filled: true,
-        dataUltimoPagamento_insercao: "23-04-2025",
+        dataUltimoPagamento_insercao: "23-05-2025",
         diasParaVencer: 30,
         title: "NoBreak",
         description: "Potencialize Seu Carro com as melhores baterias do mercado!!",
@@ -18,7 +18,7 @@ const ads = [
     {
         id: 2,
         filled: true,
-        dataUltimoPagamento_insercao: "23-04-2025",
+        dataUltimoPagamento_insercao: "23-05-2025",
         diasParaVencer: 30,
         title: "Escape Room PG",
         description: "Salas temáticas com enigmas e desafios para seu grupo desvendar. Você é capaz de escapar em 60 minutos?",
@@ -32,7 +32,7 @@ const ads = [
     {
         id: 3,
         filled: true,
-        dataUltimoPagamento_insercao: "23-04-2025",
+        dataUltimoPagamento_insercao: "23-05-2025",
         diasParaVencer: 30,
         title: "Restaurante Casantiga",
         description: "Restaurante buffet e a la carte no centro de Castro",
@@ -88,7 +88,7 @@ const ads = [
     {
         id: 7,
         filled: true,
-        dataUltimoPagamento_insercao: "23-04-2025",
+        dataUltimoPagamento_insercao: "23-05-2025",
         diasParaVencer: 30,
         title: "Eduardo da Latinha", // Adicionei um título para ficar mais claro
         description: "Compra de latinhas e outros recicláveis.", // Adicionei descrição
@@ -101,10 +101,10 @@ const ads = [
     },
     {
         id: 8,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "23-04-2025",
         diasParaVencer: 30,
-        title: "LF - Pinturas e Reformas",
+        title: "",
         description: "Graffiato, Massa Corrida, Massa Acrílica, Textura e Efeitos",
         image: "propagandas/LFPinturasReformas.png",
         imageFit: "contain",
@@ -158,7 +158,7 @@ const ads = [
     {
         id: 12,
         filled: true,
-        dataUltimoPagamento_insercao: "24-04-2025",
+        dataUltimoPagamento_insercao: "24-05-2025",
         diasParaVencer: 30,
         title: "Dias Negão Panfletagem",
         description: "Atendo Castro, Piraí do Sul, Carambeí e Ponta Grossa",
@@ -227,10 +227,10 @@ const ads = [
     },
     {
         id: 17,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "25-04-2025",
         diasParaVencer: 30,
-        title: "Mini-Mercado Guga",
+        title: "",
         description: "Oportunidade em Castro-PR, Mini-Mercado à venda",
         image: "propagandas/MiniMercadoGuga.png",
         imageFit: "contain",
@@ -270,7 +270,7 @@ const ads = [
     {
         id: 20,
         filled: true,
-        dataUltimoPagamento_insercao: "26-04-2025",
+        dataUltimoPagamento_insercao: "24-05-2025",
         diasParaVencer: 30,
         title: "Compro Sucata De Eletrônicos",
         description: "Celulares, memórias, processadores, placas ,baterias, eletrônicos e não ferrosos em geral",
@@ -437,10 +437,10 @@ const ads = [
     },
     {
         id: 32,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "Cobrar quando vier comprar baterias",
         diasParaVencer: 30,
-        title: "Chame o Chico",
+        title: "",
         description: "24 horas",
         image: "propagandas/ChameOChico.png",
         imageFit: "contain",
