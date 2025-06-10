@@ -45,7 +45,7 @@ const ads = [
     },
     {
         id: 4,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "25-04-2025",
         diasParaVencer: 45,
         title: "Monteiro Construção Civil",
@@ -60,11 +60,11 @@ const ads = [
     {
         id: 5,
         filled: true,
-        dataUltimoPagamento_insercao: "23-04-2025",
-        diasParaVencer: 45,
+        dataUltimoPagamento_insercao: "09-06-2025",
+        diasParaVencer: 30,
         title: "Borracharia Butture",
         description: "Pneus Remold a partir de R$ 195,00",
-        image: "propagandas/BorrachariaButture.png",
+        image: "propagandas/BorrachariaButture.jpg",
         imageFit: "contain",
         mobileModalImageContainerHeight: "50vh",
         mobileModalMaxWidth: "100%",
@@ -145,7 +145,7 @@ const ads = [
         id: 11,
         filled: true,
         dataUltimoPagamento_insercao: "04-06-2025",
-        diasParaVencer: 40,
+        diasParaVencer: 30,
         title: "TecnoBombasIapó",
         description: "Perfuração, manutenção e poços artesianos",
         image: "propagandas/TecnoBombasIapo.png",
@@ -199,7 +199,7 @@ const ads = [
     },
     {
         id: 15,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "25-04-2025",
         diasParaVencer: 45,
         title: "Guincho Camargo",
@@ -381,7 +381,7 @@ const ads = [
     },
     {
         id: 28,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "30-04-2025",
         diasParaVencer: 40,
         title: "SalvCar - Lataria e Pintura",
@@ -395,7 +395,7 @@ const ads = [
     },
     {
         id: 29,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "01-05-2025",
         diasParaVencer: 30,
         title: "LA CASA DO XIS",
@@ -451,7 +451,7 @@ const ads = [
     },
     {
         id: 33,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "06-05-2025",
         diasParaVencer: 30,
         title: "Adriano Valansuelo",
@@ -465,7 +465,7 @@ const ads = [
     },
     {
         id: 34,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "06-05-2025",
         diasParaVencer: 30,
         title: "Roth Facas - Facas e artigos de pesca",
@@ -479,7 +479,7 @@ const ads = [
     },
     {
         id: 35,
-        filled: true,
+        filled: false,
         dataUltimoPagamento_insercao: "06-05-2025",
         diasParaVencer: 30,
         title: "Silva - Auto Mecânica",	
